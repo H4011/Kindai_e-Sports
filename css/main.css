@@ -1,4 +1,3 @@
-
 /* 全部 */
 :root {
     --main-color: paleturquoise;
@@ -90,6 +89,9 @@ p.title {
         min-height: 200px;
         padding-left: 30px;
     }
+    #home-anim {
+        height: 100vw;
+    }
 }
 
 /* スマホ用CSS */
@@ -103,5 +105,8 @@ p.title {
     div.title-div {
         min-height: 100px;
         padding-left: 15px;
+    }
+    #home-anim {
+        height: 100vw;
     }
 }
