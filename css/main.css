@@ -138,15 +138,34 @@ footer {
         width: 30%;
         height: 30%;
     }
+    .btn-position {
+        position:absolute !important;
+        bottom: 0;
+        right: 0;
+    }
+    div.div-menu {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 10;
+    }
+    div.tap-target-wave {
+        left: 375px !important;
+    }
+    div.tap-target {
+        background-color: var(--main-color);
+    }
 }
 
 /* スマホ用CSS */
 @media screen and (max-width: 992px) {
     p.title {
-        font-size: 40px;
+        font-size: 200%;
         margin-top: 10px;
         margin-bottom: 5px !important;
         padding-left: 10px;
+        padding-top: 1%;
+        padding-bottom: 1%;
     }
     div.title-div {
         min-height: 100px;
@@ -184,11 +203,17 @@ footer {
         margin-top: 5px;
         margin-bottom: 5px;
     }
+    p.title-p {
+        font-size: 100%;
+    }
     a {
         font-size: 15px;
     }
     img.game-img {
-        width: 50%;
-        height: 50%;
+        width: 60%;
+        height: 60%;
+    }
+    div.div-menu {
+        display: none;
     }
 }
