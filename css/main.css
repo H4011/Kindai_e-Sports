@@ -1,1 +1,107 @@
 
+/* 全部 */
+:root {
+    --main-color: paleturquoise;
+}
+nav.nav-extended {
+    background-color: var(--main-color);
+}
+li.indicator {
+    background-color: #455a64 !important;
+}
+#home-anim {
+    position:fixed;
+    z-index:-100;
+}
+#home {
+    clip-path: url(#cache);
+  }
+  
+  #red {
+    fill: none;
+    opacity: 0.15;
+    stroke: #CE1B5F;
+    stroke-width: 12;
+    stroke-miterlimit:10;
+    animation: show 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; 
+  }
+  
+  #blue {
+    fill: none;
+    opacity: 0.15;
+    stroke: #06A1C4;
+    stroke-width: 12;
+    stroke-miterlimit:10;
+    animation: show 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  #light-blue {
+    fill: none;
+    opacity: 0.15;
+    stroke: #06A1C4;
+    stroke-width: 6;
+    stroke-miterlimit:10;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 800;
+    animation: draw 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;    
+  }
+  
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+   }
+      }
+  
+  @keyframes show {
+    0% {
+      opacity: 0.15;
+   }
+    50% {
+      opacity: 0.2;
+   }
+    100% {
+      opacity: 0.15;
+   }
+      }
+
+p.title {
+    z-index: 0 !important;
+    background-color: var(--main-color);
+    position: relative;
+}
+/* PC用CSS */
+@media print, screen and (min-width: 750px) {
+    p.title {
+        font-size: 30px;
+        margin-top: 10px;
+        margin-bottom: 5px !important;
+        padding-left: 20px;
+    }
+    div.title-div {
+        min-height: 200px;
+        padding-left: 30px;
+    }
+}
+
+/* スマホ用CSS */
+@media screen and (max-width: 750px) {
+    p.title {
+        font-size: 40px;
+        margin-top: 10px;
+        margin-bottom: 5px !important;
+        padding-left: 10px;
+    }
+    div.title-div {
+        min-height: 100px;
+        padding-left: 15px;
+    }
+}
