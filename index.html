@@ -23,7 +23,7 @@
       }
     }
   </style>
-  <link link type="text/css" rel="stylesheet" href="/Kindai_e-Sports/css/main.css">
+  <link link type="text/css" rel="stylesheet" href="./css/main.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -139,6 +139,19 @@
   </g>
 </g>
 </svg>
+  <!-- Element Showed -->
+  <div class="div-menu">
+  <a id="menu" class="waves-effect waves-light btn btn-floating btn-position" onclick="$('.tap-target').tapTarget('open')"><i class="material-icons">menu</i></a>
+
+  <!-- Tap Target Structure -->
+  <div class="tap-target btn-position" data-target="menu">
+    <div class="tap-target-content">
+      <li><a class="blue-grey-text text-darken-2" href="#!">参加フォーム</a></li>
+      <li><a class="blue-grey-text text-darken-2" href="#!">お問い合わせ</a></li>
+      <li><a class="blue-grey-text text-darken-2" href="#!">その他</a></li>
+    </div>
+  </div>
+  </div>
   <nav class="nav-extended" id="nav-extended-height">
     <div class="nav-wrapper">
       <a href="#" class="brand-logo blue-grey-text text-darken-2">Logo</a>
@@ -174,7 +187,7 @@
     <div class="title-div">
       <div class="title-sub" style="display: flex;justify-content: center;align-items: center;">
       <div class="left-title center-align">
-        <p>大乱闘スマッシュブラザーズ SPECIAL</p>
+        <p class="title-p">大乱闘スマッシュブラザーズ SPECIAL</p>
         <img src="https://www.smashbros.com/ja_JP/assets_v2/img/top/hero_title.png" class="game-img"></img>
         <br>
         <a href="https://www.smashbros.com/ja_JP/">公式サイト</a>
@@ -231,6 +244,9 @@
    $(document).ready(function(){
     $('.sidenav').sidenav();
   });
+  $(document).ready(function(){
+    $('.tap-target').tapTarget();
+  });
   var page = getParam('page');
   if (page == null) {
     ;
@@ -253,7 +269,7 @@
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
   </script>
- <script src="/Kindai_e-Sports/js/main.js"></script>
+ <script src="./js/main.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
