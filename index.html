@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+<head prefix="og: http://ogp.me/ns#">
   <meta charset='utf-8'>
-  <title>test</title>
+  <meta property="og:url" content="https://h4011.github.io/Kindai_e-Sports/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="近大情報学部 スマブラ大乱闘大会" />
+  <meta property="og:description" content="近大情報学部 スマブラ大乱闘大会公式ホームページです。" />
+  <meta property="og:site_name" content="近大情報学部 スマブラ大乱闘大会" />
+  <meta property="og:image" content="https://h4011.github.io/Kindai_e-Sports/img/game-title.jpg" />
+  <meta name="twitter:card" content="Summary with Large Image" />
+  <title>近大情報学部 スマブラ大乱闘大会</title>
   <style>
     :root {
       --body-size: 1024px;
@@ -28,6 +35,7 @@
   <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
  </head>
 <body>
   <svg version="1.1" id="home-anim" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -146,7 +154,7 @@
   <!-- Tap Target Structure -->
   <div class="tap-target btn-position" data-target="menu">
     <div class="tap-target-content">
-      <li><a class="blue-grey-text text-darken-2" href="#!">参加フォーム</a></li>
+      <li><a class="blue-grey-text text-darken-2" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank">参加フォーム</a></li>
       <li><a class="blue-grey-text text-darken-2" href="#!">お問い合わせ</a></li>
       <li><a class="blue-grey-text text-darken-2" href="#!">その他</a></li>
     </div>
@@ -157,7 +165,7 @@
       <a href="#" class="brand-logo blue-grey-text text-darken-2">Logo</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger blue-grey-text text-darken-2"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="blue-grey-text text-darken-2" href="#!">参加フォーム</a></li>
+        <li><a class="blue-grey-text text-darken-2" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank">参加フォーム</a></li>
         <li><a class="blue-grey-text text-darken-2" href="#!">お問い合わせ</a></li>
         <li><a class="blue-grey-text text-darken-2" href="#!">その他</a></li>
       </ul>
@@ -173,7 +181,7 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a class="blue-grey-text text-darken-2" href="#!">参加フォーム</a></li>
+    <li><a class="blue-grey-text text-darken-2" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank">参加フォーム</a></li>
     <li><a class="blue-grey-text text-darken-2" href="#!">お問い合わせ</a></li>
     <li><a class="blue-grey-text text-darken-2" href="#!">その他</a></li>
   </ul>
@@ -184,18 +192,40 @@
       <p>test</p>
     </div>
     <p class="title z-depth-1">ゲームタイトル</p>
-    <div class="title-div">
+    <div class="title-div" style="margin-top: 20px;">
       <div class="title-sub" style="display: flex;justify-content: center;align-items: center;">
-      <div class="left-title center-align">
+      <div class="speace"></div>
+      <div class="main-speace">
+      <div class="left-title center-align" id="left-title">
         <p class="title-p">大乱闘スマッシュブラザーズ SPECIAL</p>
         <img src="https://www.smashbros.com/ja_JP/assets_v2/img/top/hero_title.png" class="game-img"></img>
         <br>
-        <a href="https://www.smashbros.com/ja_JP/">公式サイト</a>
+        <a href="https://www.smashbros.com/ja_JP/" target="_blank">公式サイト</a>
       </div>
-      <div class="right-title">
+      <div class="right-title" id="right-title">
         <img src="https://h4011.github.io/Kindai_e-Sports/img/game-title.jpg" class="game-img"></img>
       </div>
+      </div>
+      <div class="speace"></div>
      </div>
+    </div>
+    <div class="title" style="margin-top: 25px;margin-bottom: 25px;">
+      <div class="title-color">
+        <h4 class="li1">対戦形式</h4>
+        <p class="li2" style="font-size: 20px;">対戦形式</p>
+        <li>トーナメント戦</li>
+        <li>個人戦（1on1）</li>
+        <li class="li1">参加者が多い場合1本先手、少ない場合2本先手</li>
+        <li class="li2">参加者が多い場合1本先手<div>少ない場合2本先手</div></li>
+        <p style="color:red;" class="li1">※オンラインでの参加は認められません</p>
+        <p style="color:red; font-size: 18px;" class="li2">※オンラインでの参加は<br>認められません</p>
+      </div>
+    </div>
+    <p class="title z-depth-1">参加資格・参加方法</p>
+    <div class="title-div">
+      <p>対象者：<span class="marker js-markerScrollAnimation">近畿大学 情報学部 情報学科 一回生</span></p>
+      <p>以下のフォームから申し込んでください。</p>
+      <a href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank">申し込みフォーム</a>
     </div>
   </div>
   <div id="test2" class="col s12">
@@ -206,6 +236,17 @@
   </div>
   <div id="test4" class="col s12">
     <p class="title z-depth-1">Q & A</p>
+    <div class="QA z-depth-3">
+      <div class="QA2">
+        <div class="question">
+         <p>Q.参加を辞退したいのですがどうすればいいですか？</p>
+        </div>
+        <div class="answer">
+          <p>A.以下のフォームから辞退ができます。</p>
+          <a href="https://forms.gle/2ukmnyYVmf4D8nW39" target="_blank">参加辞退フォーム</a>
+        </div>
+      </div>
+    </div>
   </div>
   <footer class="page-footer" id="page-footer-height">
     <div class="container">
@@ -217,7 +258,7 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="blue-grey-text text-darken-2">Links</h5>
           <ul>
-            <li><a class="blue-grey-text text-darken-4" href="#!">参加フォーム</a></li>
+            <li><a class="blue-grey-text text-darken-4" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank">参加フォーム</a></li>
             <li><a class="blue-grey-text text-darken-4" href="#!">お問い合わせ</a></li>
             <li><a class="blue-grey-text text-darken-4" href="#!">その他</a></li>
           </ul>
@@ -227,6 +268,10 @@
     <div class="footer-copyright">
       <div class="container">
       © 2022 Macaron / M
+      <div class="right">
+        <a href="https://h4011.github.io/Kindai_e-Sports/" data-url="https://h4011.github.io/Kindai_e-Sports/" data-counturl="https://h4011.github.io/Kindai_e-Sports/" data-text="近大情報学部 スマブラ大乱闘大会
+公式ホームページです。" class="twitter-share-button right" data-show-count="false">Tweet</a>
+      </div>
       </div>
     </div>
   </footer>
