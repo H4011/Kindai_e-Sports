@@ -11,9 +11,30 @@ if(ua.indexOf("windows nt") !== -1) {
 } else {
   console.log("何をお使いなのですか?");
 }
+function titleimg() {
+  var lt = document.getElementById('left-title').clientHeight;
+  var rt = document.getElementById('right-title').clientHeight;
+  var rtop = Number(getComputedStyle(document.documentElement).getPropertyValue('--right-top').replace('px',''));
+  var rbottom = Number(getComputedStyle(document.documentElement).getPropertyValue('--right-bottom').replace('px',''));
+  document.documentElement.style.setProperty('--right-top',String((lt - (rt - rtop - rbottom))/2) + 'px');
+  document.documentElement.style.setProperty('--right-bottom',String((lt - (rt - rtop - rbottom))/2) + 'px');
+  if (Number(getComputedStyle(document.documentElement).getPropertyValue('--right-top').replace('px','')) < 0) {
+    setTimeout(() => {
+      document.documentElement.style.setProperty('--right-top','0px');
+      document.documentElement.style.setProperty('--right-bottom','0px');
+      var lt = document.getElementById('left-title').clientHeight;
+      var rt = document.getElementById('right-title').clientHeight;
+      var rtop = Number(getComputedStyle(document.documentElement).getPropertyValue('--right-top').replace('px',''));
+      var rbottom = Number(getComputedStyle(document.documentElement).getPropertyValue('--right-bottom').replace('px',''));
+      document.documentElement.style.setProperty('--right-top',String((lt - (rt - rtop - rbottom))/2) + 'px');
+      document.documentElement.style.setProperty('--right-bottom',String((lt - (rt - rtop - rbottom))/2) + 'px');
+    }, 100);
+  }
+}
 console.log(document.body.clientWidth);
 console.log(window.innerHeight);
 console.log(getComputedStyle(document.documentElement).getPropertyValue('--main-color'));
+titleimg();
 
 function resizeWindow(){
   var nav_h = document.getElementById('nav-extended-height').clientHeight;
@@ -22,6 +43,25 @@ function resizeWindow(){
   document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
   document.documentElement.style.setProperty('--back-size2',String(window.innerWidth) + 'px');
   console.log(String(window.innerHeight) + 'px');
+  titleimg();
 }
 
 window.onresize = resizeWindow;
+setTimeout(() => {
+  titleimg();
+}, 100);
+
+setInterval(() => {
+  titleimg();
+}, 500);
+
+$(window).scroll(function (){
+  $(".js-markerScrollAnimation").each(function(){
+    var position = $(this).offset().top; //ページの一番上から要素までの距離を取得
+    var scroll = $(window).scrollTop(); //スクロールの位置を取得
+    var windowHeight = $(window).height(); //ウインドウの高さを取得
+    if (scroll > position - windowHeight){ //スクロール位置が要素の位置を過ぎたとき
+      $(this).addClass('is-active'); //クラス「active」を与える
+    }
+  });
+});
