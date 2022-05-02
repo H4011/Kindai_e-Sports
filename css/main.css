@@ -1,6 +1,8 @@
 /* 全部 */
 :root {
     --main-color: paleturquoise;
+    --right-top: 5px;
+    --right-bottom: 5px;
 }
 nav.nav-extended {
     background-color: var(--main-color);
@@ -10,6 +12,35 @@ ul.sidenav {
 }
 li.indicator {
     background-color: #455a64 !important;
+}
+div.QA {
+    background-color: rgb(222, 245, 245);
+    margin: 20px;
+    border-radius: 20px;
+}
+div.QA p {
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+div.QA a {
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    padding-left: 20px;
+}
+div.QA2 {
+    padding: 10px;
+}
+.marker {
+    background: -webkit-linear-gradient(left, rgb(255,250,153) 50%, transparent 50%);
+    background: -moz-linear-gradient(left, rgb(255,250,153) 50%, transparent 50%);
+    background: linear-gradient(left, rgb(255,250,153) 50%, transparent 50%);
+  background-repeat: no-repeat;
+  background-size: 200% .8em; 
+    background-position: 100% .5em;
+    transition: 2s;
+}
+.marker.is-active{
+    background-position: 0% .5em;
 }
 #home-anim {
     position:fixed;
@@ -99,6 +130,7 @@ footer {
         min-height: 200px;
         padding-left: 30px;
         padding-right: 30px;
+        padding-top: 0.5%;
     }
     /*
     #home-anim {
@@ -109,6 +141,8 @@ footer {
         float: left;
         width: 50%;
         height: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
     div.right-title {
         float: right;
@@ -117,6 +151,8 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-top: var(--right-top);
+        padding-bottom: var(--right-bottom);
     }
     div.title-sub {
         height: 100%;
@@ -131,12 +167,17 @@ footer {
         margin-top: 5px;
         margin-bottom: 5px;
     }
+    li:not(.indicator) {
+        font-size: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
     a {
         font-size: 20px;
     }
     img.game-img {
-        width: 30%;
-        height: 30%;
+        width: 40%;
+        height: 40%;
     }
     .btn-position {
         position:absolute !important;
@@ -154,6 +195,35 @@ footer {
     }
     div.tap-target {
         background-color: var(--main-color);
+    }
+    div.title {
+        text-align: center;
+    }
+    div.title-color {
+        background-color: var(--main-color);
+        display: inline-block; 
+        padding: 20px;
+        border-radius: 30px;
+        border: 4px solid rgb(143, 233, 233);
+    }
+    div.title-color li {
+        text-align: left;
+    }
+    h4 {
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }
+    .speace {
+        display: inline-block;
+        width: 20%;
+    }
+    div.main-speace {
+        display: inline-block;
+        width: 60%;
+        border: 4px solid paleturquoise;border-radius: 30px;
+    }
+    .li2 {
+        display: none;
     }
 }
 
@@ -176,11 +246,12 @@ footer {
     #home-anim {
         height: 100%;
     }
-    */
     div.left-title {
         float: left;
         width: 50%;
         height: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
     div.right-title {
         float: right;
@@ -189,7 +260,10 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-top: var(--right-top);
+        padding-bottom: var(--right-bottom);
     }
+        */
     div.title-sub {
         height: 100%;
         display: flex;
@@ -200,7 +274,7 @@ footer {
     }
     p {
         font-size: 15px;
-        margin-top: 5px;
+        margin-top: 10px;
         margin-bottom: 5px;
     }
     p.title-p {
@@ -215,5 +289,68 @@ footer {
     }
     div.div-menu {
         display: none;
+    }
+    div.title {
+        text-align: center;
+    }
+    div.title-color {
+        background-color: var(--main-color);
+        display: inline-block; 
+        padding: 20px;
+        border-radius: 30px;
+        border: 4px solid rgb(143, 233, 233);
+    }
+    div.title-color li {
+        text-align: left;
+    }
+    h4 {
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }
+    .speace {
+        display: inline-block;
+        width: 10%;
+    }
+    div.main-speace {
+        display: inline-block;
+        width: 80%;
+        border: 4px solid paleturquoise;border-radius: 30px;
+    }
+    .li1 {
+        display: none;
+    }
+    li.li2 div {
+        padding-left: 20px;
+    }
+}
+@media screen and (max-width: 992px) {
+    @media screen and (min-width: 820px) {
+        div.left-title {
+            float: left;
+            width: 50%;
+            height: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        div.right-title {
+            float: right;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: var(--right-top);
+            padding-bottom: var(--right-bottom);
+        }
+    }
+}
+@media screen and (max-width: 820px) {
+    div.left-title {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    div.right-title {
+        padding-bottom: 5px;
+        text-align: center;
     }
 }
