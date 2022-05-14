@@ -190,9 +190,11 @@ footer {
         right: 20px;
         z-index: 10;
     }
+    /*
     div.tap-target-wave {
         left: 375px !important;
     }
+    */
     div.tap-target {
         background-color: var(--main-color);
     }
