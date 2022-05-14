@@ -30,13 +30,14 @@
       }
     }
   </style>
+  <link rel="icon" href="https://h4011.github.io/Kindai_e-Sports/img/favicon.ico">
+  <link rel="apple-touch-icon" href="https://h4011.github.io/Kindai_e-Sports/img/icon.png">
   <link link type="text/css" rel="stylesheet" href="./css/main.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
- </head>
+</head>
 <body>
   <svg version="1.1" id="home-anim" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 1820 1080" style="enable-background:new 0 0 1820 1080;" xml:space="preserve">
@@ -154,9 +155,9 @@
   <!-- Tap Target Structure -->
   <div class="tap-target btn-position" data-target="menu">
     <div class="tap-target-content">
-      <li><a class="blue-grey-text text-darken-2" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank">参加フォーム</a></li>
-      <li><a class="blue-grey-text text-darken-2" href="#!">お問い合わせ</a></li>
-      <li><a class="blue-grey-text text-darken-2" href="#!">その他</a></li>
+      <li><a class="blue-grey-text text-darken-2 translation-text" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+      <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
+      <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="other_button">その他</a></li>
     </div>
   </div>
   </div>
@@ -165,9 +166,9 @@
       <a href="#" class="brand-logo blue-grey-text text-darken-2">Logo</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger blue-grey-text text-darken-2"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="blue-grey-text text-darken-2" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank">参加フォーム</a></li>
-        <li><a class="blue-grey-text text-darken-2" href="#!">お問い合わせ</a></li>
-        <li><a class="blue-grey-text text-darken-2" href="#!">その他</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="other_button">その他</a></li>
       </ul>
     </div>
     <div class="nav-content">
@@ -181,9 +182,9 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a class="blue-grey-text text-darken-2" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank">参加フォーム</a></li>
-    <li><a class="blue-grey-text text-darken-2" href="#!">お問い合わせ</a></li>
-    <li><a class="blue-grey-text text-darken-2" href="#!">その他</a></li>
+    <li><a class="blue-grey-text text-darken-2 translation-text" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+    <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
+    <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="other_button">その他</a></li>
   </ul>
 
   <div id="test1" class="col s12">
@@ -207,7 +208,7 @@
       </div>
       </div>
       <div class="speace"></div>
-     </div>
+      </div>
     </div>
     <div class="title" style="margin-top: 25px;margin-bottom: 25px;">
       <div class="title-color">
@@ -227,9 +228,38 @@
       <p>以下のフォームから申し込んでください。</p>
       <a href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank">申し込みフォーム</a>
     </div>
+    <p class="title z-depth-1">日時・開催地</p>
+    <div class="title-div">
+      <p>日　時：<span class="marker js-markerScrollAnimation">令和4年8月6日(土) 13:30〜</span></p>
+      <p>開催地：<span class="marker js-markerScrollAnimation">esports Arena</span></p>
+    </div>
   </div>
   <div id="test2" class="col s12">
     <p class="title z-depth-1">ルール</p>
+    <div class="title-div">
+      <table>
+        <tr>
+          <td><p>大会形式</p></td>
+          <td><p>トーナメント</p></td>
+        </tr>
+        <tr>
+          <td><p>ルール</p></td>
+          <td><p>1 on 1</p></td>
+        </tr>
+        <tr>
+          <td><p>ストック数</p></td>
+          <td><p>3</p></td>
+        </tr>
+        <tr>
+          <td><p>制限時間</p></td>
+          <td><p>7分</p></td>
+        </tr>
+        <tr>
+          <td><p>くわしいルール</p></td>
+          <td><p>デフォルト</p></td>
+        </tr>
+      </table>
+    </div>
   </div>
   <div id="test3" class="col s12">
     <p class="title z-depth-1">最新情報</p>
@@ -239,7 +269,7 @@
     <div class="QA z-depth-3">
       <div class="QA2">
         <div class="question">
-         <p>Q.参加を辞退したいのですがどうすればいいですか？</p>
+          <p>Q.参加を辞退したいのですがどうすればいいですか？</p>
         </div>
         <div class="answer">
           <p>A.以下のフォームから辞退ができます。</p>
@@ -258,9 +288,9 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="blue-grey-text text-darken-2">Links</h5>
           <ul>
-            <li><a class="blue-grey-text text-darken-4" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank">参加フォーム</a></li>
-            <li><a class="blue-grey-text text-darken-4" href="#!">お問い合わせ</a></li>
-            <li><a class="blue-grey-text text-darken-4" href="#!">その他</a></li>
+            <li><a class="blue-grey-text text-darken-4 translation-text" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+            <li><a class="blue-grey-text text-darken-4 translation-text" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
+            <li><a class="blue-grey-text text-darken-4 translation-text" href="#!" data-translation_id="other_button">その他</a></li>
           </ul>
         </div>
       </div>
@@ -270,7 +300,11 @@
       © 2022 Macaron / M
       <div class="right">
         <a href="https://h4011.github.io/Kindai_e-Sports/" data-url="https://h4011.github.io/Kindai_e-Sports/" data-counturl="https://h4011.github.io/Kindai_e-Sports/" data-text="近大情報学部 スマブラ大乱闘大会
-公式ホームページです。" class="twitter-share-button right" data-show-count="false">Tweet</a>
+公式ホームページです。
+" class="twitter-share-button right" data-show-count="false">Tweet</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://h4011.github.io/Kindai_e-Sports/" data-color="default" data-size="small" data-count="false" data-ver="3" style="display: none;"></div>
+        <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
       </div>
       </div>
     </div>
@@ -285,8 +319,8 @@
   <script>
   $(document).ready(function(){
     $('.tabs').tabs();
-   });
-   $(document).ready(function(){
+  });
+  $(document).ready(function(){
     $('.sidenav').sidenav();
   });
   $(document).ready(function(){
@@ -314,7 +348,7 @@
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
   </script>
- <script src="./js/main.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
