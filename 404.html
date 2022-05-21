@@ -242,27 +242,6 @@
   $(document).ready(function(){
     $('.tap-target').tapTarget();
   });
-  var page = getParam('page');
-  if (page == null) {
-    ;
-  } else if (page == 1) {
-    ;
-  } else if (page == 2) {
-    document.getElementById("page2").click();
-  } else if (page == 3) {
-    document.getElementById("page3").click();
-  } else if (page == 4) {
-    document.getElementById("page4").click();
-  }
-  function getParam(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
   </script>
   <script src="./js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
