@@ -1,3 +1,3 @@
-form_button:aaa
-contact_button:bbb
-other_button:ccc
+form_button:Participation Form
+contact_button:Contact Us
+other_button:Other
