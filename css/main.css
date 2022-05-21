@@ -7,6 +7,9 @@
 nav.nav-extended {
     background-color: var(--main-color);
 }
+nav#nav-extended-height {
+    background-color: var(--main-color);
+}
 ul.sidenav {
     background-color: var(--main-color);
 }
@@ -34,8 +37,8 @@ div.QA2 {
     background: -webkit-linear-gradient(left, rgb(255,250,153) 50%, transparent 50%);
     background: -moz-linear-gradient(left, rgb(255,250,153) 50%, transparent 50%);
     background: linear-gradient(left, rgb(255,250,153) 50%, transparent 50%);
-  background-repeat: no-repeat;
-  background-size: 200% .8em; 
+    background-repeat: no-repeat;
+    background-size: 200% .8em; 
     background-position: 100% .5em;
     transition: 2s;
 }
@@ -48,9 +51,9 @@ div.QA2 {
 }
 #home {
     clip-path: url(#cache);
-  }
-  
-  #red {
+}
+
+#red {
     fill: none;
     opacity: 0.15;
     stroke: #CE1B5F;
@@ -60,9 +63,9 @@ div.QA2 {
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out; 
-  }
-  
-  #blue {
+}
+
+#blue {
     fill: none;
     opacity: 0.15;
     stroke: #06A1C4;
@@ -72,9 +75,9 @@ div.QA2 {
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-  }
-  
-  #light-blue {
+}
+
+#light-blue {
     fill: none;
     opacity: 0.15;
     stroke: #06A1C4;
@@ -86,25 +89,25 @@ div.QA2 {
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;    
-  }
-  
-  @keyframes draw {
+}
+
+@keyframes draw {
     to {
-      stroke-dashoffset: 0;
-   }
-      }
-  
-  @keyframes show {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes show {
     0% {
-      opacity: 0.15;
-   }
+        opacity: 0.15;
+    }
     50% {
-      opacity: 0.2;
-   }
+        opacity: 0.2;
+    }
     100% {
-      opacity: 0.15;
-   }
-      }
+        opacity: 0.15;
+    }
+}
 p.title {
     z-index: 0 !important;
     background-color: var(--main-color);
@@ -227,6 +230,13 @@ footer {
     .li2 {
         display: none;
     }
+    div#space {
+        background-color: var(--main-color);
+        position: relative;
+    }
+    nav#nav-extended-height {
+        height:122px;
+    }
 }
 
 /* スマホ用CSS */
@@ -323,6 +333,9 @@ footer {
     }
     li.li2 div {
         padding-left: 20px;
+    }
+    nav#nav-extended-height {
+        height:112px;
     }
 }
 @media screen and (max-width: 992px) {
