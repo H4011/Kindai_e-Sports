@@ -18,7 +18,7 @@ if (params.get('lang') == "en") {
       console.log(xhr.responseText);
       list_text = xhr.responseText.split("\n");
       console.log(list_text);
-      var trans_text = document.querySelectorAll(".translation-text");
+      var trans_text = document.querySelectorAll("[data-translation_id]");
       var trans_list = [];
       for (var i = 0; i < trans_text.length; i++) {
         trans_list.push(trans_text[i].dataset.translation_id)
