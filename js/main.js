@@ -56,7 +56,7 @@ if(ua.indexOf("windows nt") !== -1) {
 }
 function titleimg() {
   var url2 = window.location.href;
-  if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'test.html') {
+  if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
     var lt = document.getElementById('left-title').clientHeight;
     var rt = document.getElementById('right-title').clientHeight;
     var rtop = Number(getComputedStyle(document.documentElement).getPropertyValue('--right-top').replace('px',''));

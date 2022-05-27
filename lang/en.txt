@@ -1,3 +1,8 @@
 form_button:Participation Form
 contact_button:Contact Us
 other_button:Other
+home_tab:Home
+rule_tab:Rule
+info_tab:News
+not_found_1:The page is missing.
+not_found_2:I'm sorry. The page you are looking for could not be found.
