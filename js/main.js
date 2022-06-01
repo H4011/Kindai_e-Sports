@@ -17,14 +17,14 @@ if (params.get('lang') == null) {
 
 if (params.get('lang') == "default") {
   if(lang2 == "en") {
-    url.searchParams.append('lang','en');
+    url.searchParams.set('lang','en');
     location.href = url;
   }
 }
 
 if (params.get('lang') == "en") {
   if(lang2 == "ja") {
-    url.searchParams.append('lang','default');
+    url.searchParams.set('lang','default');
     location.href = url;
   }
 }
