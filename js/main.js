@@ -4,17 +4,7 @@ var url = new URL(window.location.href);
 var params = url.searchParams;
 console.log(params.get('lang'));
 var lang2 = (window.navigator.userLanguage || window.navigator.language || window.navigator.browserLanguage).substr(0,2) == "ja" ? "ja" : "en";
-if(lang2 == "en") {
-  url.searchParams.set('lang','en');
-} else if(lang2 == "ja") {
-  url.searchParams.set('lang','default');
-} else {
-  url.searchParams.set('lang','default'); 
-}
-location.href = url;
-/*
 if (params.get('lang') == null) {
-  var lang2 = (window.navigator.userLanguage || window.navigator.language || window.navigator.browserLanguage).substr(0,2) == "ja" ? "ja" : "en";
   if(lang2 == "en") {
     url.searchParams.append('lang','en');
   } else if(lang2 == "ja") {
@@ -26,17 +16,18 @@ if (params.get('lang') == null) {
 }
 
 if (params.get('lang') == "default") {
-  var lang2 = (window.navigator.userLanguage || window.navigator.language || window.navigator.browserLanguage).substr(0,2) == "ja" ? "ja" : "en";
   if(lang2 == "en") {
     url.searchParams.append('lang','en');
-  } else if(lang2 == "ja") {
-    url.searchParams.append('lang','default');
-  } else {
-    url.searchParams.append('lang','default'); 
+    location.href = url;
   }
-	location.href = url;
 }
-*/
+
+if (params.get('lang') == "en") {
+  if(lang2 == "ja") {
+    url.searchParams.append('lang','default');
+    location.href = url;
+  }
+}
 
 if (params.get('lang') == "en") {
   var list_text = [];
