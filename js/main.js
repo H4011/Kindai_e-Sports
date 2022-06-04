@@ -12,17 +12,18 @@ if (params.get('lang') == null) {
   } else {
     url.searchParams.append('lang','default'); 
   }
+  url.searchParams.append('lang_set','auto');
 	location.href = url;
 }
 
-if (params.get('lang') == "default") {
+if (params.get('lang') == "default" && params.get('lang_set') != "manual") {
   if(lang2 == "en") {
     url.searchParams.set('lang','en');
     location.href = url;
   }
 }
 
-if (params.get('lang') == "en") {
+if (params.get('lang') == "en" && params.get('lang_set') != "manual") {
   if(lang2 == "ja") {
     url.searchParams.set('lang','default');
     location.href = url;

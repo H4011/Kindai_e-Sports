@@ -30,6 +30,13 @@
         height: var(--back-size);
       }
     }
+    a.other3 {
+      opacity: 0;
+      transition: .7s;
+    }
+    a.other3.show {
+      opacity: 1;
+    }
   </style>
   <link rel="icon" href="https://h4011.github.io/Kindai_e-Sports/img/favicon.ico">
   <link rel="apple-touch-icon" href="https://h4011.github.io/Kindai_e-Sports/img/icon.png">
@@ -166,12 +173,16 @@
   </div>
   <nav class="nav-extended" id="nav-extended-height">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo blue-grey-text text-darken-2">Logo</a>
+      <a href="#" class="brand-logo blue-grey-text text-darken-2 li1">KINDAI University SSB Tournament</a>
+      <a href="#" class="brand-logo blue-grey-text text-darken-2 li2">KDIX SSB Tournament</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger blue-grey-text text-darken-2"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="blue-grey-text text-darken-2 translation-text" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-        <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
-        <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="other_button">その他</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text other3" href="#!" data-translation_id="contact_button">デジタルペーパー</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text other2" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text other2" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
+        <li>
+          <a class="blue-grey-text text-darken-2 translation-text other" href="#!" data-translation_id="other_button">その他</a>
+        </li>
       </ul>
     </div>
     <div class="nav-content">
@@ -184,11 +195,18 @@
     </div>
   </nav>
 
+  <div>
   <ul class="sidenav" id="mobile-demo">
     <li><a class="blue-grey-text text-darken-2 translation-text" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
     <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
     <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="other_button">その他</a></li>
   </ul>
+  <script>
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+  </script>
+  </div>
 
   <div id="test1" class="col s12">
     <p class="title z-depth-1">test</p>
@@ -324,10 +342,31 @@
     $('.tabs').tabs();
   });
   $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-  $(document).ready(function(){
     $('.tap-target').tapTarget();
+  });
+  var i = 0;
+  $(function() {
+  // ボタンをクリックしたら発動
+  $('a.other').click(function() {
+    // 素早くフェードアウトさせる
+    if(i == 0) {
+    i = 3;
+    console.log(i);
+    $('a.other2').fadeToggle('fast');
+    setTimeout(() => {
+      $('a.other3').toggleClass('show');
+      i = 1;
+    }, 200);
+    } else if(i == 1) {
+    i = 3;
+    console.log(i);
+    $('a.other3').toggleClass('show');
+    setTimeout(() => {
+      $('a.other2').fadeToggle('fast');
+      i = 0;
+    }, 500);
+    }
+  });
   });
   var page = getParam('page');
   if (page == null) {
