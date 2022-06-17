@@ -64,6 +64,13 @@ if (params.get('lang') == "en") {
   xhr.send(null);
 }
 
+var info_id = document.querySelectorAll("div.collapsible-header");
+var info_count = 0;
+for (const j of info_id) {
+  j.id = "icon" + info_count;
+  info_count++;
+}
+
 if(ua.indexOf("windows nt") !== -1) {
   console.log("「Microsoft Windows」をお使いですね!");
 } else if(ua.indexOf("android") !== -1) {

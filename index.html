@@ -37,6 +37,24 @@
     a.other3.show {
       opacity: 1;
     }
+    div.collapsible-header i.icon1 {
+      opacity: 1;
+      display: block;
+    }
+    div.collapsible-header.active i.icon1 {
+      opacity: 0;
+      transition: .2s;
+      display: none;
+    }
+    div.collapsible-header i.icon2 {
+      opacity: 0;
+      transition: .2s;
+      display: none;
+    }
+    div.collapsible-header.active i.icon2 {
+      opacity: 1;
+      display: block;
+    }
   </style>
   <link rel="icon" href="https://h4011.github.io/Kindai_e-Sports/img/favicon.ico">
   <link rel="apple-touch-icon" href="https://h4011.github.io/Kindai_e-Sports/img/icon.png">
@@ -47,6 +65,7 @@
   <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
   <svg version="1.1" id="home-anim" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -173,33 +192,33 @@
   </div>
   <nav class="nav-extended" id="nav-extended-height">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo blue-grey-text text-darken-2 li1">KINDAI University SSB Tournament</a>
-      <a href="#" class="brand-logo blue-grey-text text-darken-2 li2">KDIX SSB Tournament</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger blue-grey-text text-darken-2"><i class="material-icons">menu</i></a>
+      <a href="#" class="brand-logo blue-grey-text text-darken-2 li1 not-select">KINDAI University SSB Tournament</a>
+      <a href="#" class="brand-logo blue-grey-text text-darken-2 li2 not-select">KDIX SSB Tournament</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger blue-grey-text text-darken-2 not-select"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="blue-grey-text text-darken-2 translation-text other3" href="#!" data-translation_id="contact_button">デジタルペーパー</a></li>
-        <li><a class="blue-grey-text text-darken-2 translation-text other2" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-        <li><a class="blue-grey-text text-darken-2 translation-text other2" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text other3 not-display not-select" href="#!" data-translation_id="contact_button" id="menu-other">デジタルペーパー</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text other2 not-select" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text other2 not-select" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
         <li>
-          <a class="blue-grey-text text-darken-2 translation-text other" href="#!" data-translation_id="other_button">その他</a>
+          <a class="blue-grey-text text-darken-2 translation-text other not-select" href="#!" data-translation_id="other_button" onclick="$('#menu-other').removeClass('not-display');">その他</a>
         </li>
       </ul>
     </div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
-        <li class="tab"><a class="active blue-grey-text text-darken-2" href="#test1" id="page1" data-translation_id="home_tab">ホーム</a></li>
-        <li class="tab"><a class="blue-grey-text text-darken-2" href="#test2" id="page2" data-translation_id="rule_tab">ルール</a></li>
-        <li class="tab"><a class="blue-grey-text text-darken-2" href="#test3" id="page3" data-translation_id="info_tab">最新情報</a></li>
-        <li class="tab"><a class="blue-grey-text text-darken-2" href="#test4" id="page4">Q & A</a></li>
+        <li class="tab"><a class="active blue-grey-text text-darken-2 not-select" href="#test1" id="page1" data-translation_id="home_tab">ホーム</a></li>
+        <li class="tab"><a class="blue-grey-text text-darken-2 not-select" href="#test2" id="page2" data-translation_id="rule_tab">ルール</a></li>
+        <li class="tab"><a class="blue-grey-text text-darken-2 not-select" href="#test3" id="page3" data-translation_id="info_tab">最新情報</a></li>
+        <li class="tab"><a class="blue-grey-text text-darken-2 not-select" href="#test4" id="page4">Q & A</a></li>
       </ul>
     </div>
   </nav>
 
   <div>
   <ul class="sidenav" id="mobile-demo">
-    <li><a class="blue-grey-text text-darken-2 translation-text" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-    <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
-    <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="other_button">その他</a></li>
+    <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+    <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
+    <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="#!" data-translation_id="other_button">その他</a></li>
   </ul>
   <script>
   $(document).ready(function(){
@@ -209,9 +228,13 @@
   </div>
 
   <div id="test1" class="col s12">
-    <p class="title z-depth-1">test</p>
+    <p class="title z-depth-1">概要</p>
     <div class="title-div">
-      <p>test</p>
+      <p>本イベントはスマブラを通して情報学部1年生の交流を目的としています！</p>
+      <p>トーナメント枠だけでなくフリー対戦枠を設けるので初心者から上級者までぜひ参加してみてください！</p>
+      <p>参加費無料！手ぶら参加OKです！（コントローラーの持参協力頂けると助かります！）</p>
+      <p>参加申込みはGoogleフォームからお願いします</p>
+      <p>質問等はGoogleフォーム又はTwitterアカウントから</p>
     </div>
     <p class="title z-depth-1">ゲームタイトル</p>
     <div class="title-div" style="margin-top: 20px;">
@@ -251,8 +274,22 @@
     </div>
     <p class="title z-depth-1">日時・開催地</p>
     <div class="title-div">
-      <p>日　時：<span class="marker js-markerScrollAnimation">令和4年8月6日(土) 13:30〜</span></p>
+      <p>日　時：<span class="marker js-markerScrollAnimation">令和4年8月6日(土) 13:00〜</span></p>
       <p>開催地：<span class="marker js-markerScrollAnimation">esports Arena</span></p>
+      <p>受　付：<span class="marker js-markerScrollAnimation">12:30~13:00</span></p>
+    </div>
+    <p class="title z-depth-1">注意事項</p>
+    <div class="title-div">
+      <p>施設内飲食禁止です。</p>
+      <p>参加人数が多かった場合は先着順とさせていただきます。</p>
+      <p>大会の様子をネット配信させてもらいますのでご了承ください。</p>
+    </div>
+    <p class="title z-depth-1">中止とトラブル</p>
+    <div class="title-div">
+      <p>悪天候等により中止となる場合があります。</p>
+      <p>その際はTwitter公式アカウント（<a href="https://twitter.com/KDIXSSB" target="_blank">@KDIXSSB</a>）よりお知らせ致します。</p>
+      <p>利用者同士でトラブルとならぬようすぐにスタッフへお声がけ下さい。</p>
+      <p>その他貴重品の紛失等については責任を負いかねます。</p>
     </div>
   </div>
   <div id="test2" class="col s12">
@@ -276,14 +313,63 @@
           <td><p>7分</p></td>
         </tr>
         <tr>
+          <td><p>ステージ</p></td>
+          <td><p>終点のみ</p></td>
+        </tr>
+        <tr>
+          <td><p>チャージ切り札</p></td>
+          <td><p>OFF</p></td>
+        </tr>
+        <tr>
+          <td><p>アイテム</p></td>
+          <td><p>スマッシュボールのみ</p></td>
+        </tr>
+        <tr>
+          <td><p>ギミック</p></td>
+          <td><p>OFF</p></td>
+        </tr>
+        <tr>
+          <td><p>スピリッツ</p></td>
+          <td><p>OFF</p></td>
+        </tr>
+        <tr>
           <td><p>くわしいルール</p></td>
           <td><p>デフォルト</p></td>
         </tr>
       </table>
     </div>
+    <p class="title z-depth-1">その他ルール</p>
+    <div class="title-div">
+      <p>ポケモントレーナー等のキャラを変更出来るファイターを選択する際はどのキャラでスタートするかまで決めて対戦相手に伝えて下さい。</p>
+      <p>Mii ファイターは自分で作成して使用して下さい。</p>
+      <p>顔の作成、服の変更は不可です。</p>
+      <p>対戦前に設定している必殺技を対戦相手に伝えて下さい。</p>
+      <p>ホームボタンを押してしまう等の原因が明らかなトラブルの場合、再度トラブルを発生させたプレイヤーは敗北とします。</p>
+    </div>
+    <p class="title z-depth-1">トラブルについて</p>
+    <div class="title-div">
+      <p>ホームボタンを押してしまう等の原因が明らかなトラブルの場合、再度トラブルを発生させたプレイヤーは敗北とします。</p>
+      <p>「エラーが発生したので、ソフトが終了しました。」や「本体が高温になりすぎたためスリープします。」などの機材トラブルが発生した場合はスタッフをお呼び下さい。</p>
+    </div>
   </div>
   <div id="test3" class="col s12">
     <p class="title z-depth-1" data-translation_id="info_tab">最新情報</p>
+    <div class="QA z-depth-3">
+      <div class="info">
+        <div class="row">
+          <div class="col s7 left-align"><p style="padding-left: 1vh;">ホームページを公開</p></div>
+          <div class="col s5 right-align"><p style="padding-right: 1vh;">20XX/XX/XX</p></div>
+        </div>
+        <ul class="collapsible" style="margin-bottom: 0px !important; box-shadow: 0 0px 0px 0 rgba(0,0,0,0.14),0 0px 0px 0px rgba(0,0,0,0.12),0 0px 0px 0 rgba(0,0,0,0.2) !important; border: 0px;">
+          <li class="info">
+            <div class="collapsible-header not-select" style="border: 0px;" onclick="$('#'+this.id).toggleClass('active');"><i class="material-icons icon1" style="margin: 0 auto;">expand_more</i><i class="material-icons icon2" style="margin: 0 auto;">expand_less</i></div>
+            <div class="collapsible-body" style="border: 0px; background-color: white;"><p>ホームページを公開しました。</p><p>ホームページを公開しました。</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="info2">
+      </div>
+    </div>
   </div>
   <div id="test4" class="col s12">
     <p class="title z-depth-1">Q & A</p>
@@ -303,7 +389,8 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="blue-grey-text text-darken-2">近大情報学部 スマブラ大乱闘大会</h5>
+          <h5 class="blue-grey-text text-darken-2 li1">KINDAI University SSB Tournament</h5>
+          <h5 class="blue-grey-text text-darken-2 li2">KDIX SSB Tournament</h5>
           <p class="blue-grey-text text-darken-4">test</p>
         </div>
         <div class="col l4 offset-l2 s12">
@@ -318,7 +405,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      © 2022 Macaron / M
+      © 2022 <a href="https://twitter.com/macaron_miku__" target="_blank" style="color:rgba(255,255,255,0.8);" class="not-style">Macaron / M</a>
       <div class="right">
         <a href="https://h4011.github.io/Kindai_e-Sports/" data-url="https://h4011.github.io/Kindai_e-Sports/" data-counturl="https://h4011.github.io/Kindai_e-Sports/" data-text="近大情報学部 スマブラ大乱闘大会
 公式ホームページです。
@@ -344,6 +431,9 @@
   $(document).ready(function(){
     $('.tap-target').tapTarget();
   });
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
   var i = 0;
   $(function() {
   // ボタンをクリックしたら発動
@@ -363,6 +453,7 @@
     $('a.other3').toggleClass('show');
     setTimeout(() => {
       $('a.other2').fadeToggle('fast');
+      $('a.other3').toggleClass('not-display');
       i = 0;
     }, 500);
     }

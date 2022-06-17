@@ -30,8 +30,42 @@ div.QA a {
     padding-bottom: 2.5px;
     padding-left: 20px;
 }
+div.QA a {
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    padding-left: 20px;
+}
 div.QA2 {
     padding: 10px;
+}
+div.info {
+    padding-top: 10px;
+}
+div.info2 {
+    padding-bottom: 20px;
+    background-color: white;
+    border-radius: 0px 0px 20px 20px;
+}
+div.collapsible-body p {
+    margin: 0px;
+    padding: 0px;
+}
+.not-select {
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.not-display {
+    display: none;
+}
+.collapsible-header {
+    padding-bottom: 0px !important;
+}
+div.info div.row {
+    padding-right: 10px;
+    padding-left: 10px;
 }
 .marker {
     background: -webkit-linear-gradient(left, rgb(255,250,153) 50%, transparent 50%);
@@ -165,17 +199,17 @@ footer {
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    p {
+    p:not(.not-style):not(.title) {
         font-size: 20px;
         margin-top: 5px;
         margin-bottom: 5px;
     }
-    li:not(.indicator) {
+    li:not(.indicator):not(.info) {
         font-size: 20px;
         margin-top: 5px;
         margin-bottom: 5px;
     }
-    a {
+    a:not(.not-style) {
         font-size: 20px;
     }
     img.game-img {
@@ -214,7 +248,7 @@ footer {
     div.title-color li {
         text-align: left;
     }
-    h4 {
+    h4:not(.not-style) {
         margin-top: 5px !important;
         margin-bottom: 5px !important;
     }
@@ -284,7 +318,7 @@ footer {
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    p {
+    p:not(.not-style) {
         font-size: 15px;
         margin-top: 10px;
         margin-bottom: 5px;
@@ -292,7 +326,7 @@ footer {
     p.title-p {
         font-size: 100%;
     }
-    a {
+    a:not(.not-style) {
         font-size: 15px;
     }
     img.game-img {
@@ -315,7 +349,7 @@ footer {
     div.title-color li {
         text-align: left;
     }
-    h4 {
+    h4:not(.not-style) {
         margin-top: 5px !important;
         margin-bottom: 5px !important;
     }
