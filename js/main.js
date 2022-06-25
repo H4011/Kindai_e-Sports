@@ -103,6 +103,9 @@ function titleimg() {
         document.documentElement.style.setProperty('--right-bottom',String((lt - (rt - rtop - rbottom))/2) + 'px');
       }, 100);
     }
+  } else if((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/paper.html') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'paper.html'){
+    var paper = document.getElementById('paper').clientHeight;
+    document.documentElement.style.setProperty('--size-paper',String(window.innerHeight*0.8) + 'px');
   }
 }
 console.log(document.body.clientWidth);

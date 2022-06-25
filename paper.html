@@ -16,6 +16,7 @@
       --back-size: 1024px;
       --back-size2: 1024px;
       --not-page: 1024px;
+      --size-paper: 1024px;
     }
     div.col.s12[id^="test"]{
       min-height: var(--body-size);
@@ -39,6 +40,9 @@
     }
     a.other3.show {
       opacity: 1;
+    }
+    #paper {
+      height: var(--size-paper);
     }
   </style>
   <link rel="icon" href="https://h4011.github.io/Kindai_e-Sports/img/favicon.ico">
@@ -195,13 +199,15 @@
     <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="#!" data-translation_id="other_button">その他</a></li>
   </ul>
 
-  <div class="not-found">
-  <p class="title z-depth-1">404 not found</p>
-  <div class="title-div">
-    <h5 data-translation_id="not_found_1">ページが見つかりませんでした</h5>
-    <p data-translation_id="not_found_2">申し訳ありません。お探しのページが見つかりませんでした。</p>
-    <a href="https://h4011.github.io/Kindai_e-Sports/" data-translation_id="home_tab">トップページ</a>
+  <p class="title z-depth-1">デジタルペーパー</p>
+  <div class="title-div center-align">
+    <img src="./img/SSBflyer.png" id="paper" class="center-align" onselectstart="return false;" onmousedown="return false;" oncontextmenu="return false;"></img>
   </div>
+  <div class="center-align" style="padding:20px;">
+    <a href="./img/SSBflyer.pdf" class="waves-effect waves-light btn center-align" download="SSBflyer.pdf">ダウンロードはこちら</a>
+    </div>
+  <div class="center-align" style="padding:20px;">
+  <a href="https://h4011.github.io/Kindai_e-Sports/" class="waves-effect waves-light btn center-align">トップページに戻る</a>
   </div>
 
   <footer class="page-footer" id="page-footer-height">
