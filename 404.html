@@ -7,7 +7,7 @@
   <meta property="og:title" content="近大情報学部 スマブラ大乱闘大会" />
   <meta property="og:description" content="近大情報学部 スマブラ大乱闘大会公式ホームページです。" />
   <meta property="og:site_name" content="近大情報学部 スマブラ大乱闘大会" />
-  <meta property="og:image" content="https://h4011.github.io/Kindai_e-Sports/img/game-title.jpg" />
+  <meta property="og:image" content="https://h4011.github.io/Kindai_e-Sports/img/icon.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <title>404 not found</title>
   <style>
@@ -32,6 +32,13 @@
       #home-anim {
         height: var(--back-size);
       }
+    }
+    a.other3 {
+      opacity: 0;
+      transition: .7s;
+    }
+    a.other3.show {
+      opacity: 1;
     }
   </style>
   <link rel="icon" href="https://h4011.github.io/Kindai_e-Sports/img/favicon.ico">
@@ -161,28 +168,31 @@
   <!-- Tap Target Structure -->
   <div class="tap-target btn-position" data-target="menu">
     <div class="tap-target-content">
-      <li><a class="blue-grey-text text-darken-2 translation-text" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-      <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
-      <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="other_button">その他</a></li>
+      <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+      <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
+      <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="#!" data-translation_id="other_button">その他</a></li>
     </div>
   </div>
   </div>
   <nav id="nav-extended-height">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo blue-grey-text text-darken-2">Logo</a>
+      <a href="#" class="brand-logo blue-grey-text text-darken-2 li1 not-select">KINDAI University SSB Tournament</a>
+      <a href="#" class="brand-logo blue-grey-text text-darken-2 li2 not-select">KDIX SSB Tournament</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger blue-grey-text text-darken-2"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="blue-grey-text text-darken-2 translation-text" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-        <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
-        <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="other_button">その他</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text other3 not-display not-select" href="#!" data-translation_id="contact_button" id="menu-other">デジタルペーパー</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text other2 not-select" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text other2 not-select" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
+        <li>
+          <a class="blue-grey-text text-darken-2 translation-text other not-select" href="#!" data-translation_id="other_button" onclick="$('#menu-other').removeClass('not-display');">その他</a>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a class="blue-grey-text text-darken-2 translation-text" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-    <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
-    <li><a class="blue-grey-text text-darken-2 translation-text" href="#!" data-translation_id="other_button">その他</a></li>
+    <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+    <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
+    <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="#!" data-translation_id="other_button">その他</a></li>
   </ul>
 
   <div class="not-found">
@@ -198,22 +208,23 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="blue-grey-text text-darken-2">近大情報学部 スマブラ大乱闘大会</h5>
-          <p class="blue-grey-text text-darken-4">test</p>
+          <h5 class="blue-grey-text text-darken-2 li1 not-select">KINDAI University SSB Tournament</h5>
+          <h5 class="blue-grey-text text-darken-2 li2 not-select">KDIX SSB Tournament</h5>
+          <p class="blue-grey-text text-darken-4"></p>
         </div>
         <div class="col l4 offset-l2 s12">
-          <h5 class="blue-grey-text text-darken-2">Links</h5>
+          <h5 class="blue-grey-text text-darken-2 not-select">Links</h5>
           <ul>
-            <li><a class="blue-grey-text text-darken-4 translation-text" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-            <li><a class="blue-grey-text text-darken-4 translation-text" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
-            <li><a class="blue-grey-text text-darken-4 translation-text" href="#!" data-translation_id="other_button">その他</a></li>
+            <li><a class="blue-grey-text text-darken-4 translation-text not-select" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+            <li><a class="blue-grey-text text-darken-4 translation-text not-select" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
+            <li><a class="blue-grey-text text-darken-4 translation-text not-select" href="#!" data-translation_id="other_button">その他</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
-      <div class="container">
-      © 2022 Macaron / M
+      <div class="container not-select">
+      © 2022 <a href="https://twitter.com/macaron_miku__" target="_blank" style="color:rgba(255,255,255,0.8);" class="not-style">Macaron / M</a>
       <div class="right">
         <a href="https://h4011.github.io/Kindai_e-Sports/" data-url="https://h4011.github.io/Kindai_e-Sports/" data-counturl="https://h4011.github.io/Kindai_e-Sports/" data-text="近大情報学部 スマブラ大乱闘大会
 公式ホームページです。
@@ -242,6 +253,31 @@
   });
   $(document).ready(function(){
     $('.tap-target').tapTarget();
+  });
+  var i = 0;
+  $(function() {
+  // ボタンをクリックしたら発動
+  $('a.other').click(function() {
+    // 素早くフェードアウトさせる
+    if(i == 0) {
+    i = 3;
+    console.log(i);
+    $('a.other2').fadeToggle('fast');
+    setTimeout(() => {
+      $('a.other3').toggleClass('show');
+      i = 1;
+    }, 200);
+    } else if(i == 1) {
+    i = 3;
+    console.log(i);
+    $('a.other3').toggleClass('show');
+    setTimeout(() => {
+      $('a.other2').fadeToggle('fast');
+      $('a.other3').toggleClass('not-display');
+      i = 0;
+    }, 500);
+    }
+  });
   });
   </script>
   <script src="./js/main.js"></script>
