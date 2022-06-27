@@ -16,7 +16,7 @@
       --back-size: 1024px;
       --back-size2: 1024px;
       --not-page: 1024px;
-      --size-paper: 1024px;
+      --size-paper: 0px;
     }
     div.col.s12[id^="test"]{
       min-height: var(--body-size);
@@ -172,34 +172,34 @@
   <!-- Tap Target Structure -->
   <div class="tap-target btn-position" data-target="menu">
     <div class="tap-target-content">
-      <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-      <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
-      <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="#!" data-translation_id="other_button">その他</a></li>
+      <li><a class="blue-grey-text text-darken-2 translation-text not-select" data-translation_id="home_button">トップページ</a></li>
+      <li><a class="blue-grey-text text-darken-2 translation-text not-select" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+      <li><a class="blue-grey-text text-darken-2 translation-text not-select lia" data-translation_id="contact_button">お問い合わせ</a></li>
     </div>
   </div>
   </div>
   <nav id="nav-extended-height">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo blue-grey-text text-darken-2 li1 not-select">KINDAI University SSB Tournament</a>
-      <a href="#" class="brand-logo blue-grey-text text-darken-2 li2 not-select">KDIX SSB Tournament</a>
+      <a href="index.html" class="brand-logo blue-grey-text text-darken-2 li1 not-select">KINDAI University SSB Tournament</a>
+      <a href="index.html" class="brand-logo blue-grey-text text-darken-2 li2 not-select">KDIX SSB Tournament</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger blue-grey-text text-darken-2"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="blue-grey-text text-darken-2 translation-text other3 not-display not-select" href="./paper.html" data-translation_id="contact_button" id="menu-other">デジタルペーパー</a></li>
-        <li><a class="blue-grey-text text-darken-2 translation-text other2 not-select" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-        <li><a class="blue-grey-text text-darken-2 translation-text other2 not-select" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text other3 not-select" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text other2 not-select" data-translation_id="home_button">トップページ</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text other2 not-select" data-translation_id="contact_button">お問い合わせ</a></li>
         <li>
-          <a class="blue-grey-text text-darken-2 translation-text other not-select" href="#!" data-translation_id="other_button" onclick="$('#menu-other').removeClass('not-display');">その他</a>
+          <a class="blue-grey-text text-darken-2 translation-text other not-select" href="#!" data-translation_id="other_button" onclick="document.querySelectorAll('#menu-other').forEach(element => {element.classList.remove('not-display')});">その他</a>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-    <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
-    <li><a class="blue-grey-text text-darken-2 translation-text not-select" href="#!" data-translation_id="other_button">その他</a></li>
+    <li><a class="blue-grey-text text-darken-2 translation-text not-select" data-translation_id="home_button">トップページ</a></li>
+    <li><a class="blue-grey-text text-darken-2 translation-text not-select" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+    <li><a class="blue-grey-text text-darken-2 translation-text not-select" data-translation_id="contact_button">お問い合わせ</a></li>
   </ul>
 
-  <p class="title z-depth-1">デジタルペーパー</p>
+  <p class="title z-depth-1" data-translation_id="paper_button">デジタルペーパー</p>
   <div class="title-div center-align">
     <img src="./img/SSBflyer.png" id="paper" class="center-align" onselectstart="return false;" onmousedown="return false;" oncontextmenu="return false;"></img>
   </div>
@@ -207,7 +207,7 @@
     <a href="./img/SSBflyer.pdf" class="waves-effect waves-light btn center-align" download="SSBflyer.pdf">ダウンロードはこちら</a>
     </div>
   <div class="center-align" style="padding:20px;">
-  <a href="https://h4011.github.io/Kindai_e-Sports/" class="waves-effect waves-light btn center-align">トップページに戻る</a>
+  <a class="waves-effect waves-light btn center-align" data-translation_id="home_button">トップページに戻る</a>
   </div>
 
   <footer class="page-footer" id="page-footer-height">
@@ -221,9 +221,9 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="blue-grey-text text-darken-2 not-select">Links</h5>
           <ul>
-            <li><a class="blue-grey-text text-darken-4 translation-text not-select" href="https://forms.gle/xwrbFKLGt4ny6k4N8" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-            <li><a class="blue-grey-text text-darken-4 translation-text not-select" href="#!" data-translation_id="contact_button">お問い合わせ</a></li>
-            <li><a class="blue-grey-text text-darken-4 translation-text not-select" href="#!" data-translation_id="other_button">その他</a></li>
+            <li><a class="blue-grey-text text-darken-4 translation-text not-select" data-translation_id="home_button">トップページ</a></li>
+            <li><a class="blue-grey-text text-darken-4 translation-text not-select" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
+            <li><a class="blue-grey-text text-darken-4 translation-text not-select" data-translation_id="contact_button">お問い合わせ</a></li>
           </ul>
         </div>
       </div>
@@ -260,30 +260,31 @@
   $(document).ready(function(){
     $('.tap-target').tapTarget();
   });
-  var i = 0;
+  var i2 = 0;
   $(function() {
   // ボタンをクリックしたら発動
-  $('a.other').click(function() {
-    // 素早くフェードアウトさせる
-    if(i == 0) {
-    i = 3;
-    console.log(i);
-    $('a.other2').fadeToggle('fast');
-    setTimeout(() => {
-      $('a.other3').toggleClass('show');
-      i = 1;
-    }, 200);
-    } else if(i == 1) {
-    i = 3;
-    console.log(i);
-    $('a.other3').toggleClass('show');
-    setTimeout(() => {
-      $('a.other2').fadeToggle('fast');
-      $('a.other3').toggleClass('not-display');
-      i = 0;
-    }, 500);
-    }
-  });
+    $('a.other').click(function() {
+      console.log("aaa");
+      // 素早くフェードアウトさせる
+      if(i2 == 0) {
+        i2 = 3;
+        console.log(i2);
+        $('a.other2').fadeToggle('fast');
+        setTimeout(() => {
+          $('a.other3').toggleClass('show');
+          i2 = 1;
+        }, 200);
+      } else if(i2 == 1) {
+        i2 = 3;
+        console.log(i2);
+        $('a.other3').toggleClass('show');
+        setTimeout(() => {
+          $('a.other2').fadeToggle('fast');
+          $('a.other3').toggleClass('not-display');
+          i2 = 0;
+        }, 500);
+      }
+    });
   });
   </script>
   <script src="./js/main.js"></script>

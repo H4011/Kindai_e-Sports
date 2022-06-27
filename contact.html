@@ -9,7 +9,7 @@
   <meta property="og:site_name" content="近大情報学部 スマブラ大乱闘大会" />
   <meta property="og:image" content="https://h4011.github.io/Kindai_e-Sports/img/icon.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <title>近大情報学部 スマブラ大乱闘大会</title>
+  <title>お問い合わせ</title>
   <style>
     :root {
       --body-size: 1024px;
@@ -19,6 +19,9 @@
     }
     div.col.s12[id^="test"]{
       min-height: var(--body-size);
+    }
+    div.not-found {
+      min-height: var(--not-page);
     }
     @media print, screen and (min-width: 1091px) {
       #home-anim {
@@ -37,35 +40,16 @@
     a.other3.show {
       opacity: 1;
     }
-    div.collapsible-header i.icon1 {
-      opacity: 1;
-      display: block;
-    }
-    div.collapsible-header.active i.icon1 {
-      opacity: 0;
-      transition: .2s;
-      display: none;
-    }
-    div.collapsible-header i.icon2 {
-      opacity: 0;
-      transition: .2s;
-      display: none;
-    }
-    div.collapsible-header.active i.icon2 {
-      opacity: 1;
-      display: block;
-    }
   </style>
-  <link rel="icon" href="https://h4011.github.io/Kindai_e-Sports/img/favicon.ico">
-  <link rel="apple-touch-icon" href="https://h4011.github.io/Kindai_e-Sports/img/icon.png">
-  <link rel="icon" type="image/x-icon" href="https://h4011.github.io/Kindai_e-Sports/img/favicon.ico"">
+  <link rel="icon" href="./favicon.ico">
+  <link rel="apple-touch-icon" href="./img/icon.png">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico"">
   <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
   <link link type="text/css" rel="stylesheet" href="./css/main.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
   <svg version="1.1" id="home-anim" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -184,208 +168,111 @@
   <!-- Tap Target Structure -->
   <div class="tap-target btn-position" data-target="menu">
     <div class="tap-target-content">
+      <li><a class="blue-grey-text text-darken-2 translation-text not-select" data-translation_id="home_button">トップページ</a></li>
       <li><a class="blue-grey-text text-darken-2 translation-text not-select" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-      <li><a class="blue-grey-text text-darken-2 translation-text not-select lia" data-translation_id="contact_button">お問い合わせ</a></li>
       <li><a class="blue-grey-text text-darken-2 translation-text not-select" data-translation_id="paper_button">デジタルペーパー</a></li>
     </div>
   </div>
   </div>
-  <nav class="nav-extended" id="nav-extended-height">
+  <nav id="nav-extended-height">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo blue-grey-text text-darken-2 li1 not-select">KINDAI University SSB Tournament</a>
-      <a href="#" class="brand-logo blue-grey-text text-darken-2 li2 not-select">KDIX SSB Tournament</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger blue-grey-text text-darken-2 not-select"><i class="material-icons">menu</i></a>
+      <a href="index.html" class="brand-logo blue-grey-text text-darken-2 li1 not-select">KINDAI University SSB Tournament</a>
+      <a href="index.html" class="brand-logo blue-grey-text text-darken-2 li2 not-select">KDIX SSB Tournament</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger blue-grey-text text-darken-2"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a class="blue-grey-text text-darken-2 translation-text other3 not-display not-select" data-translation_id="paper_button" id="menu-other">デジタルペーパー</a></li>
+        <li><a class="blue-grey-text text-darken-2 translation-text other2 not-select" data-translation_id="home_button">トップページ</a></li>
         <li><a class="blue-grey-text text-darken-2 translation-text other2 not-select" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-        <li><a class="blue-grey-text text-darken-2 translation-text other2 not-select" data-translation_id="contact_button">お問い合わせ</a></li>
         <li>
           <a class="blue-grey-text text-darken-2 translation-text other not-select" href="#!" data-translation_id="other_button" onclick="document.querySelectorAll('#menu-other').forEach(element => {element.classList.remove('not-display')});">その他</a>
-        </li>
-      </ul>
-    </div>
-    <div class="nav-content">
-      <ul class="tabs tabs-transparent">
-        <li class="tab"><a class="active blue-grey-text text-darken-2 not-select" href="#test1" id="page1" data-translation_id="home_tab">ホーム</a></li>
-        <li class="tab"><a class="blue-grey-text text-darken-2 not-select" href="#test2" id="page2" data-translation_id="rule_tab">ルール</a></li>
-        <li class="tab"><a class="blue-grey-text text-darken-2 not-select" href="#test3" id="page3" data-translation_id="info_tab">最新情報</a></li>
-        <li class="tab"><a class="blue-grey-text text-darken-2 not-select" href="#test4" id="page4">Q & A</a></li>
       </ul>
     </div>
   </nav>
 
-  <div>
   <ul class="sidenav" id="mobile-demo">
+    <li><a class="blue-grey-text text-darken-2 translation-text not-select" data-translation_id="home_button">トップページ</a></li>
     <li><a class="blue-grey-text text-darken-2 translation-text not-select" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-    <li><a class="blue-grey-text text-darken-2 translation-text not-select" data-translation_id="contact_button">お問い合わせ</a></li>
     <li><a class="blue-grey-text text-darken-2 translation-text not-select" data-translation_id="paper_button">デジタルペーパー</a></li>
   </ul>
-  <script>
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-  </script>
+
+  <p class="title z-depth-1" data-translation_id="contact_button">お問い合わせ ※製作中</p>
+  <div class="title-div center-align">
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="col s12">
+            氏名:
+              <div class="input-field inline">
+                <input id="first_name" type="text" class="validate">
+                <label for="first_name">姓</label>
+              </div>
+              <div class="input-field inline">
+                <input id="last_name" type="text" class="validate">
+                <label for="last_name">名</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s3"></div>
+          <div class="input-field col s6">
+            <input id="ssb_num" type="text" class="validate">
+            <label for="ssb_num">学籍番号</label>
+          </div>
+          <div class="col s3"></div>
+        </div>
+        <div class="row">
+          <div class="col s3"></div>
+          <div class="input-field col s6">
+            <input placeholder="無記入の場合は不要です" id="ssb_name" type="text" class="validate">
+            <label for="ssb_name">選手名</label>
+          </div>
+          <div class="col s3"></div>
+        </div>
+        <div class="row">
+          <p class="col s4">
+            <label>
+              <input name="group1" type="radio" />
+              <span>質問</span>
+            </label>
+          </p>
+          <p class="col s4">
+            <label>
+              <input name="group1" type="radio" />
+              <span>選手名変更</span>
+            </label>
+          </p>
+          <p class="col s4">
+            <label>
+              <input name="group1" type="radio" />
+              <span>その他</span>
+            </label>
+          </p>
+        </div>
+        <div class="row">
+          <div class="col s2"></div>
+          <div class="input-field col s8">
+            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <label for="textarea1">Textarea</label>
+          </div>
+          <div class="col s2"></div>
+        </div>
+        <div class="row">
+          <div class="col s2"></div>
+          <div class="col s4 left-align">
+            <a class="waves-effect waves-light btn center-align" data-translation_id="home_button">トップページに戻る</a>
+          </div>
+          <div class="col s4 right-align">
+            <a class="btn waves-effect waves-light" disabled>送信
+              <i class="material-icons right">send</i>
+            </a>
+          </div>
+          <div class="col s2"></div>
+        </div>
+      </form>
+    </div>
   </div>
 
-  <div id="test1" class="col s12">
-    <p class="title z-depth-1">概要</p>
-    <div class="title-div">
-      <p>本イベントはスマブラを通して情報学部1年生の交流を目的としています！</p>
-      <p>トーナメント枠だけでなくフリー対戦枠を設けるので初心者から上級者までぜひ参加してみてください！</p>
-      <p>参加費無料！手ぶら参加OKです！（コントローラーの持参協力頂けると助かります！）</p>
-      <p>参加申込みはGoogleフォームからお願いします</p>
-      <p>質問等はお問い合わせ又はTwitterアカウント（<a href="https://twitter.com/KDIX_SSB" target="_blank">@KDIX_SSB</a>）から</p>
-    </div>
-    <p class="title z-depth-1">ゲームタイトル</p>
-    <div class="title-div" style="margin-top: 20px;">
-      <div class="title-sub" style="display: flex;justify-content: center;align-items: center;">
-      <div class="speace"></div>
-      <div class="main-speace">
-        <div class="left-title center-align" id="left-title">
-          <p class="title-p">大乱闘スマッシュブラザーズ SPECIAL</p>
-          <img src="https://www.smashbros.com/ja_JP/assets_v2/img/top/hero_title.png" class="game-img" onselectstart="return false;" onmousedown="return false;" oncontextmenu="return false;"></img>
-          <br>
-          <a href="https://www.smashbros.com/ja_JP/" target="_blank">公式サイト</a>
-        </div>
-        <div class="right-title" id="right-title">
-          <img src="https://h4011.github.io/Kindai_e-Sports/img/game-title.jpg" class="game-img" onselectstart="return false;" onmousedown="return false;" oncontextmenu="return false;"></img>
-        </div>
-      </div>
-      <div class="speace"></div>
-      </div>
-    </div>
-    <div class="title" style="margin-top: 25px;margin-bottom: 25px;">
-      <div class="title-color">
-        <h4 class="li1">対戦形式</h4>
-        <p class="li2" style="font-size: 20px;">対戦形式</p>
-        <li>トーナメント戦</li>
-        <li>個人戦（1on1）</li>
-        <li class="li1">1本先取</li>
-        <li class="li2">1本先取</li>
-        <p style="color:red;" class="li1">※オンラインでの参加は認められません</p>
-        <p style="color:red; font-size: 18px;" class="li2">※オンラインでの参加は<br>認められません</p>
-      </div>
-    </div>
-    <p class="title z-depth-1">参加資格・参加方法</p>
-    <div class="title-div">
-      <p>対象者：<span class="marker js-markerScrollAnimation">近畿大学 情報学部 情報学科 一回生</span></p>
-      <p>以下のフォームから申し込んでください。</p>
-      <p>申込開始日：未定</p>
-      <a target="_blank" data-translation_id="form_button">申し込みフォーム</a>
-    </div>
-    <p class="title z-depth-1">日時・開催地</p>
-    <div class="title-div">
-      <p>日　時：<span class="marker js-markerScrollAnimation">令和4年8月6日(土) 13:00〜</span></p>
-      <p>定　員：<span>30名</span></p>
-      <p>開催地：<span>esports Arena</span></p>
-      <p>受　付：<span>12:30~13:00</span></p>
-    </div>
-    <p class="title z-depth-1">注意事項</p>
-    <div class="title-div">
-      <p>施設内飲食禁止です。</p>
-      <p>参加人数が多かった場合は先着順とさせていただきます。</p>
-      <p>大会の様子をネット配信させてもらいますのでご了承ください。</p>
-    </div>
-    <p class="title z-depth-1">中止とトラブル</p>
-    <div class="title-div">
-      <p>悪天候等により中止となる場合があります。</p>
-      <p>その際はTwitter公式アカウント（<a href="https://twitter.com/KDIX_SSB" target="_blank">@KDIX_SSB</a>）よりお知らせ致します。</p>
-      <p>利用者同士でトラブルとならぬようすぐにスタッフへお声がけ下さい。</p>
-      <p>その他貴重品の紛失等については責任を負いかねます。</p>
-    </div>
-  </div>
-  <div id="test2" class="col s12">
-    <p class="title z-depth-1" data-translation_id="rule_tab">ルール</p>
-    <div class="title-div">
-      <table>
-        <tr>
-          <td><p>大会形式</p></td>
-          <td><p>トーナメント</p></td>
-        </tr>
-        <tr>
-          <td><p data-translation_id="rule_tab">ルール</p></td>
-          <td><p>1 on 1</p></td>
-        </tr>
-        <tr>
-          <td><p>ストック数</p></td>
-          <td><p>3</p></td>
-        </tr>
-        <tr>
-          <td><p>制限時間</p></td>
-          <td><p>7分</p></td>
-        </tr>
-        <tr>
-          <td><p>ステージ</p></td>
-          <td><p>終点のみ</p></td>
-        </tr>
-        <tr>
-          <td><p>チャージ切り札</p></td>
-          <td><p>OFF</p></td>
-        </tr>
-        <tr>
-          <td><p>アイテム</p></td>
-          <td><p>スマッシュボールのみ</p></td>
-        </tr>
-        <tr>
-          <td><p>ギミック</p></td>
-          <td><p>OFF</p></td>
-        </tr>
-        <tr>
-          <td><p>スピリッツ</p></td>
-          <td><p>OFF</p></td>
-        </tr>
-        <tr>
-          <td><p>くわしいルール</p></td>
-          <td><p>デフォルト</p></td>
-        </tr>
-      </table>
-    </div>
-    <p class="title z-depth-1">その他ルール</p>
-    <div class="title-div">
-      <p>ポケモントレーナー等のキャラを変更出来るファイターを選択する際はどのキャラでスタートするかまで決めて対戦相手に伝えて下さい。</p>
-      <p>Mii ファイターは自分で作成して使用して下さい。</p>
-      <p>顔の作成、服の変更は不可です。</p>
-      <p>対戦前に設定している必殺技を対戦相手に伝えて下さい。</p>
-    </div>
-    <p class="title z-depth-1">トラブルについて</p>
-    <div class="title-div">
-      <p>ホームボタンを押してしまう等の原因が明らかなトラブルの場合、再度トラブルを発生させたプレイヤーは敗北とします。</p>
-      <p>その他予期せぬ事態やトラブルはスタッフをお呼び下さい。</p>
-    </div>
-  </div>
-  <div id="test3" class="col s12">
-    <p class="title z-depth-1" data-translation_id="info_tab">最新情報</p>
-    <div class="QA z-depth-3">
-      <div class="info">
-        <div class="row">
-          <div class="col s7 left-align"><p style="padding-left: 1vh;">ホームページを公開</p></div>
-          <div class="col s5 right-align"><p style="padding-right: 1vh;">20XX/XX/XX</p></div>
-        </div>
-        <ul class="collapsible" style="margin-bottom: 0px !important; box-shadow: 0 0px 0px 0 rgba(0,0,0,0.14),0 0px 0px 0px rgba(0,0,0,0.12),0 0px 0px 0 rgba(0,0,0,0.2) !important; border: 0px;">
-          <li class="info">
-            <div class="collapsible-header not-select" style="border: 0px;" onclick="$('#'+this.id).toggleClass('active');"><i class="material-icons icon1" style="margin: 0 auto;">expand_more</i><i class="material-icons icon2" style="margin: 0 auto;">expand_less</i></div>
-            <div class="collapsible-body" style="border: 0px; background-color: white;"><p>ホームページを公開しました。</p></div>
-          </li>
-        </ul>
-      </div>
-      <div class="info2">
-      </div>
-    </div>
-  </div>
-  <div id="test4" class="col s12">
-    <p class="title z-depth-1">Q & A</p>
-    <div class="QA z-depth-3">
-      <div class="QA2">
-        <div class="question">
-          <p>Q.参加を辞退したいのですがどうすればいいですか？</p>
-        </div>
-        <div class="answer">
-          <p>A.以下のフォームから辞退ができます。</p>
-          <a href="https://forms.gle/2ukmnyYVmf4D8nW39" target="_blank">参加辞退フォーム</a>
-        </div>
-      </div>
-    </div>
-  </div>
   <footer class="page-footer" id="page-footer-height">
     <div class="container">
       <div class="row">
@@ -397,8 +284,8 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="blue-grey-text text-darken-2 not-select">Links</h5>
           <ul>
+            <li><a class="blue-grey-text text-darken-4 translation-text not-select" data-translation_id="home_button">トップページ</a></li>
             <li><a class="blue-grey-text text-darken-4 translation-text not-select" target="_blank" data-translation_id="form_button">参加フォーム</a></li>
-            <li><a class="blue-grey-text text-darken-4 translation-text not-select" data-translation_id="contact_button">お問い合わせ</a></li>
             <li><a class="blue-grey-text text-darken-4 translation-text not-select" data-translation_id="paper_button">デジタルペーパー</a></li>
           </ul>
         </div>
@@ -424,22 +311,22 @@
     document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
     document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
     document.documentElement.style.setProperty('--back-size2',String(window.innerWidth) + 'px');
+    document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h -11) + 'px');
   </script>
   <script>
   $(document).ready(function(){
     $('.tabs').tabs();
   });
   $(document).ready(function(){
-    $('.tap-target').tapTarget();
+    $('.sidenav').sidenav();
   });
   $(document).ready(function(){
-    $('.collapsible').collapsible();
+    $('.tap-target').tapTarget();
   });
   var i2 = 0;
   $(function() {
   // ボタンをクリックしたら発動
     $('a.other').click(function() {
-      console.log("aaa");
       // 素早くフェードアウトさせる
       if(i2 == 0) {
         i2 = 3;
@@ -461,36 +348,6 @@
       }
     });
   });
-  /*
-  $(function() {
-  $('a.lia').click(function() {
-    setTimeout(() => {
-      $('.tap-target').tapTarget('close');
-    }, 50);
-  });
-  });
-  */
-  var page = getParam('page');
-  if (page == null) {
-    ;
-  } else if (page == 1) {
-    ;
-  } else if (page == 2) {
-    document.getElementById("page2").click();
-  } else if (page == 3) {
-    document.getElementById("page3").click();
-  } else if (page == 4) {
-    document.getElementById("page4").click();
-  }
-  function getParam(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
   </script>
   <script src="./js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

@@ -1,5 +1,17 @@
 var ua = window.navigator.userAgent.toLowerCase();
 
+// ,["",""]
+var url_list = [["contact_button","contact.html"],["home_button","index.html"],["form_button","https://forms.gle/xwrbFKLGt4ny6k4N8"],["paper_button","paper.html"]];
+for (var i of url_list) {
+  var contact = document.querySelectorAll("a[data-translation_id='" + i[0] + "']");
+  if(contact.length != 0) {
+    for (const j of contact) {
+      j.href=i[1];
+      //i.href="mailto:ssb.kindai@gmail.com?subject=お問い合わせ";
+    }
+  }
+}
+
 var url = new URL(window.location.href);
 var params = url.searchParams;
 console.log(params.get('lang'));
@@ -70,18 +82,21 @@ for (const j of info_id) {
   j.id = "icon" + info_count;
   info_count++;
 }
-
+var device;
 if(ua.indexOf("windows nt") !== -1) {
-  console.log("「Microsoft Windows」をお使いですね!");
+  device = "Windows";
 } else if(ua.indexOf("android") !== -1) {
-  console.log("「Android」をお使いですね!");
-} else if(ua.indexOf("iphone") !== -1 || ua.indexOf("ipad") !== -1) {
-  console.log("「iOS」をお使いですね!");
+  device = "Android";
+} else if(ua.indexOf("iphone") !== -1) {
+  device = "iPhone";
+} else if(ua.indexOf("ipad") !== -1) {
+  device = "iPad";
 } else if(ua.indexOf("mac os x") !== -1) {
-  console.log("「macOS」をお使いですね!");
+  device = "Mac";
 } else {
-  console.log("何をお使いなのですか?");
+  device = undefined;
 }
+console.log(device);
 function titleimg() {
   var url2 = window.location.href;
   if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
@@ -104,8 +119,12 @@ function titleimg() {
       }, 100);
     }
   } else if((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/paper.html') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'paper.html'){
-    var paper = document.getElementById('paper').clientHeight;
-    document.documentElement.style.setProperty('--size-paper',String(window.innerHeight*0.8) + 'px');
+    var paper = document.getElementById('paper');
+    if(device == "iPhone" || device == "Android" || device == "iPad") {
+      paper.style.width = String(window.innerWidth*0.6) + 'px';
+    } else {
+      paper.style.height = String(window.innerHeight*0.8) + 'px';
+    }
   }
 }
 console.log(document.body.clientWidth);
