@@ -13,22 +13,16 @@
   <style>
     :root {
       --body-size: 1024px;
-      --back-size: 1024px;
-      --back-size2: 1024px;
+      --back-size: auto;
+      --back-size2: auto;
       --not-page: 1024px;
     }
     div.col.s12[id^="test"]{
       min-height: var(--body-size);
     }
-    @media print, screen and (min-width: 1091px) {
-      #home-anim {
-        width: var(--back-size2);
-      }
-    }
-    @media screen and (max-width: 1091px) {
-      #home-anim {
-        height: var(--back-size);
-      }
+    #home-anim {
+      height: var(--back-size);
+      width: var(--back-size2);
     }
     a.other3 {
       opacity: 0;
@@ -418,13 +412,6 @@
       </div>
     </div>
   </footer>
-  <script>
-    var nav_h = document.getElementById('nav-extended-height').clientHeight;
-    var foo_h = document.getElementById('page-footer-height').clientHeight;
-    document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
-    document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
-    document.documentElement.style.setProperty('--back-size2',String(window.innerWidth) + 'px');
-  </script>
   <script>
   $(document).ready(function(){
     $('.tabs').tabs();

@@ -97,6 +97,19 @@ if(ua.indexOf("windows nt") !== -1) {
   device = undefined;
 }
 console.log(device);
+var paper = document.getElementById('paper');
+try {
+  if(device == "iPhone" || device == "Android" || device == "iPad") {
+    paper.style.width = String(window.innerWidth*0.6) + 'px';
+    paper.style.height = 'auto';
+  } else {
+    paper.style.height = String(window.innerHeight*0.8) + 'px';
+    paper.style.width = 'auto';
+  }
+  paper.setAttribute("src","./img/SSBflyer.png");
+} catch (error) {
+  ;
+}
 function titleimg() {
   var url2 = window.location.href;
   if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
@@ -119,28 +132,104 @@ function titleimg() {
       }, 100);
     }
   } else if((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/paper.html') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'paper.html'){
-    var paper = document.getElementById('paper');
     if(device == "iPhone" || device == "Android" || device == "iPad") {
       paper.style.width = String(window.innerWidth*0.6) + 'px';
+      paper.style.height = 'auto';
     } else {
       paper.style.height = String(window.innerHeight*0.8) + 'px';
+      paper.style.width = 'auto';
     }
   }
 }
 console.log(document.body.clientWidth);
 console.log(window.innerHeight);
+console.log(window.innerWidth);
 console.log(getComputedStyle(document.documentElement).getPropertyValue('--main-color'));
 titleimg();
 
+var size3 = 0;
+/*
 function resizeWindow(){
   var nav_h = document.getElementById('nav-extended-height').clientHeight;
   var foo_h = document.getElementById('page-footer-height').clientHeight;
-  document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
-  document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
-  document.documentElement.style.setProperty('--back-size2',String(window.innerWidth) + 'px');
-  document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h) + 'px');
-  console.log(String(window.innerHeight) + 'px');
-  titleimg();
+  if(size3 < window.innerHeight && (device == "iPhone" || device == "iPad" || device == "Android")) {
+    document.getElementById('home-anim').style.setProperty("width",'auto')
+    document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
+    document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
+    document.documentElement.style.setProperty('--back-size2',String(window.innerWidth) + 'px');
+    document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h) + 'px');
+    console.log(String(window.innerHeight) + 'px');
+    size3 = window.innerHeight;
+    if(document.getElementById('home-anim').clientWidth < window.innerWidth) {
+      document.documentElement.style.setProperty('--back-size','auto');
+      document.getElementById('home-anim').style.setProperty("width",String(window.innerWidth) + 'px')
+    }
+    titleimg();
+  } else if(device == "Windows" || device == "Mac") {
+    document.getElementById('home-anim').style.setProperty("width",'auto')
+    document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
+    document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
+    document.documentElement.style.setProperty('--back-size2',String(window.innerWidth) + 'px');
+    document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h) + 'px');
+    console.log(String(window.innerHeight) + 'px');
+    if(document.getElementById('home-anim').clientWidth < window.innerWidth) {
+      document.documentElement.style.setProperty('--back-size','auto');
+      document.getElementById('home-anim').style.setProperty("width",String(window.innerWidth) + 'px')
+    }
+    titleimg();
+  }
+}
+*/
+function resizeWindow(){
+  var nav_h = document.getElementById('nav-extended-height').clientHeight;
+  var foo_h = document.getElementById('page-footer-height').clientHeight;
+  if(device == "iPhone" || device == "iPad" || device == "Android") {
+    document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
+    document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h) + 'px');
+    if(window.innerHeight >= window.innerWidth) {
+      if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size').replace('px','').replace('auto','0')) <= window.innerHeight) {
+        document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
+        document.documentElement.style.setProperty('--back-size2','auto');
+      }
+      console.log("Height")
+    } else if(window.innerHeight < window.innerWidth) {
+      if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size2').replace('px','').replace('auto','0')) <= window.innerWidth) {
+        console.log(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size2').replace('px','').replace('auto','0')));
+        document.documentElement.style.setProperty('--back-size2',String(window.innerWidth) + 'px');
+        document.documentElement.style.setProperty('--back-size','auto');
+        if(document.getElementById('home-anim').clientHeight < window.innerHeight) {
+          document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
+          document.documentElement.style.setProperty('--back-size2','auto');
+          console.log("Width --> Height")
+        } else {
+          console.log("Width")
+        }
+      } else {
+        console.log("Cancel Width")
+      }
+    }
+    titleimg();
+  } else if(device == "Windows" || device == "Mac") {
+    document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
+    document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h) + 'px');
+    if(window.innerHeight >= window.innerWidth) {
+        document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
+        document.documentElement.style.setProperty('--back-size2','auto');
+      console.log("Height")
+    }
+    if(window.innerHeight < window.innerWidth) {
+        document.documentElement.style.setProperty('--back-size2',String(window.innerWidth) + 'px');
+        document.documentElement.style.setProperty('--back-size','auto');
+        if(document.getElementById('home-anim').clientHeight < window.innerHeight) {
+          document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
+          document.documentElement.style.setProperty('--back-size2','auto');
+          console.log("Width --> Height")
+        } else {
+          console.log("Width")
+        }
+    }
+    titleimg();
+  }
 }
 
 window.onresize = resizeWindow;
@@ -162,3 +251,7 @@ $(window).scroll(function (){
     }
   });
 });
+
+resizeWindow();
+
+
