@@ -197,11 +197,11 @@
           <div class="col s12">
             氏名:
               <div class="input-field inline">
-                <input id="first_name" type="text" class="validate">
+                <input id="first_name" type="text" class="validate" oninput="var fn = document.querySelectorAll('input#'+id)[1];var fn2 = document.querySelectorAll('label[for=\''+id+'\']')[1];fn.value = value;if(value.length != 0){fn.classList.add('valid');fn2.classList.add('active');}else{fn.classList.remove('valid');fn2.classList.remove('active');}">
                 <label for="first_name">姓</label>
               </div>
               <div class="input-field inline">
-                <input id="last_name" type="text" class="validate">
+                <input id="last_name" type="text" class="validate" oninput="var fn = document.querySelectorAll('input#'+id)[1];var fn2 = document.querySelectorAll('label[for=\''+id+'\']')[1];fn.value = value;if(value.length != 0){fn.classList.add('valid');fn2.classList.add('active');}else{fn.classList.remove('valid');fn2.classList.remove('active');}">
                 <label for="last_name">名</label>
               </div>
             </div>
@@ -214,18 +214,18 @@
         </div>
         <div class="row li2">
           <div class="input-field col s6">
-            <input id="first_name" type="text" class="validate">
+            <input id="first_name" type="text" class="validate" oninput="var fn = document.querySelectorAll('input#'+id)[0];var fn2 = document.querySelectorAll('label[for=\''+id+'\']')[0];fn.value = value;if(value.length != 0){fn.classList.add('valid');fn2.classList.add('active');}else{fn.classList.remove('valid');fn2.classList.remove('active');}">
             <label for="first_name">姓</label>
           </div>
           <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
+            <input id="last_name" type="text" class="validate" oninput="var fn = document.querySelectorAll('input#'+id)[0];var fn2 = document.querySelectorAll('label[for=\''+id+'\']')[0];fn.value = value;if(value.length != 0){fn.classList.add('valid');fn2.classList.add('active');}else{fn.classList.remove('valid');fn2.classList.remove('active');}">
             <label for="last_name">名</label>
           </div>
         </div>
         <div class="row">
           <div class="col s3"></div>
           <div class="input-field col s6">
-            <input id="ssb_num" type="text" class="validate">
+            <input id="ssb_num" type="text" oninput="value = value.replace(/[^0-9]+/i,'');" class="validate" inputmode="numeric" maxlength="10">
             <label for="ssb_num">学籍番号</label>
           </div>
           <div class="col s3"></div>
@@ -242,50 +242,50 @@
           <p class="col s4">
             <label>
               <input name="group1" type="radio" />
-              <span>質問</span>
+              <span id="group1">質問</span>
             </label>
           </p>
           <p class="col s4">
             <label>
               <input name="group1" type="radio" />
-              <span>選手名変更</span>
+              <span id="group1">選手名変更</span>
             </label>
           </p>
           <p class="col s4">
             <label>
               <input name="group1" type="radio" />
-              <span>その他</span>
+              <span id="group1">その他</span>
             </label>
           </p>
         </div>
         <div class="row li2">
           <p class="col s12">
             <label>
-              <input name="group1" type="radio" />
-              <span>質問</span>
+              <input name="group2" type="radio" />
+              <span id="group2">質問</span>
             </label>
           </p>
         </div>
         <div class="row li2">
           <p class="col s12">
             <label>
-              <input name="group1" type="radio" />
-              <span>選手名変更</span>
+              <input name="group2" type="radio" />
+              <span id="group2">選手名変更</span>
             </label>
           </p>
         </div>
         <div class="row li2">
           <p class="col s12">
             <label>
-              <input name="group1" type="radio" />
-              <span>その他</span>
+              <input name="group2" type="radio" />
+              <span id="group2">その他</span>
             </label>
           </p>
         </div>
         <div class="row li1">
           <div class="col s2"></div>
           <div class="input-field col s8">
-            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <textarea id="textarea1" class="materialize-textarea" oninput="var fn = document.querySelectorAll('textarea#'+id)[1];var fn2 = document.querySelectorAll('label[for=\''+id+'\']')[1];fn.value = value;if(value.length != 0){fn2.classList.add('active');}else{fn2.classList.remove('active');}"></textarea>
             <label for="textarea1">内容</label>
           </div>
           <div class="col s2"></div>
@@ -293,7 +293,7 @@
         <div class="row li2">
           <div class="col s1"></div>
           <div class="input-field col s10">
-            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <textarea id="textarea1" class="materialize-textarea" oninput="var fn = document.querySelectorAll('textareau#'+id)[0];var fn2 = document.querySelectorAll('label[for=\''+id+'\']')[0];fn.value = value;if(value.length != 0){fn2.classList.add('active');}else{fn2.classList.remove('active');}"></textarea>
             <label for="textarea1">内容</label>
           </div>
           <div class="col s1"></div>
@@ -304,7 +304,7 @@
             <a class="waves-effect waves-light btn center-align" data-translation_id="home_button">トップページに戻る</a>
           </div>
           <div class="col s4 right-align">
-            <a class="btn waves-effect waves-light" disabled>送信
+            <a class="btn waves-effect waves-light contact">送信
               <i class="material-icons right">send</i>
             </a>
           </div>
@@ -312,7 +312,7 @@
         </div>
         <div class="row li2">
           <div class="col s12 center-align">
-            <a class="btn waves-effect waves-light" disabled>送信
+            <a class="btn waves-effect waves-light contact">送信
               <i class="material-icons right">send</i>
             </a>
           </div>
@@ -390,6 +390,34 @@
           $('a.other3').toggleClass('not-display');
           i2 = 0;
         }, 500);
+      }
+    });
+  });
+  $(function() {
+  // ボタンをクリックしたら発動
+    $('input[name="group1"]').click(function() {
+      let elements = document.getElementsByName('group1');
+      let len = elements.length;
+      let checkValue = '';
+
+      for (let i = 0; i < len; i++){
+        if (elements.item(i).checked){
+          document.getElementsByName('group2')[i].checked = true;
+        }
+      }
+    });
+  });
+  $(function() {
+  // ボタンをクリックしたら発動
+    $('input[name="group2"]').click(function() {
+      let elements = document.getElementsByName('group2');
+      let len = elements.length;
+      let checkValue = '';
+
+      for (let i = 0; i < len; i++){
+        if (elements.item(i).checked){
+          document.getElementsByName('group1')[i].checked = true;
+        }
       }
     });
   });

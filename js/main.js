@@ -254,4 +254,44 @@ $(window).scroll(function (){
 
 resizeWindow();
 
-
+$(function() {
+  // ボタンをクリックしたら発動
+  $('a.btn.waves-effect.waves-light.contact').click(function() {
+    var first_name = document.getElementById("first_name").value;
+    var last_name = document.getElementById("last_name").value;
+    var ssb_num = document.getElementById("ssb_num").value;
+    var ssb_name = document.getElementById("ssb_name").value;
+    var elements = document.getElementsByName('group1');
+    var len = elements.length;
+    var checkValue = '';
+    for (let i = 0; i < len; i++){
+        if (elements.item(i).checked){
+            checkValue = document.querySelectorAll("span#group1")[i].textContent;
+        }
+    }
+    var content = document.getElementById("textarea1").value;
+    if(first_name == "") {
+      alert("姓を入力して下さい。");
+      return;
+    }
+    if(last_name == "") {
+      alert("名を入力して下さい。");
+      return;
+    }
+    if(ssb_num == "" || ssb_num.length != 10) {
+      alert("学籍番号を入力して下さい。");
+      return;
+    }
+    if(checkValue == '') {
+      alert("問い合わせ項目を選択して下さい。");
+      return;
+    }
+    if(content.replaceAll(" ","").replaceAll("　","").replaceAll("\n","") == "") {
+      alert("お問い合わせ内容を入力して下さい。");
+      return;
+    }
+    var all = "氏名："+first_name+" "+last_name+"\n学籍番号："+ssb_num+"\n選手名："+ssb_name+"\n\n問い合わせ項目："+checkValue+"\n\n◇お問い合わせ内容\n"+content+"\n\n※このまま送信して下さい";
+    console.log(all);
+    location.href = "mailto:ssb.kindai@gmail.com?subject="+encodeURI("お問い合わせ")+"&body="+encodeURI(all);
+  });
+});
