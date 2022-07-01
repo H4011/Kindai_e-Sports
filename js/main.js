@@ -12,37 +12,34 @@ for (var i of url_list) {
   }
 }
 
-var url = new URL(window.location.href);
-var params = url.searchParams;
-console.log(params.get('lang'));
+console.log(localStorage.getItem('lang'));
 var lang2 = (window.navigator.userLanguage || window.navigator.language || window.navigator.browserLanguage).substr(0,2) == "ja" ? "ja" : "en";
-if (params.get('lang') == null) {
+if (localStorage.getItem('lang') == null) {
   if(lang2 == "en") {
-    url.searchParams.append('lang','en');
+    localStorage.setItem('lang','en');
   } else if(lang2 == "ja") {
-    url.searchParams.append('lang','default');
+    localStorage.setItem('lang','default');
   } else {
-    url.searchParams.append('lang','default'); 
+    localStorage.setItem('lang','default'); 
   }
-  url.searchParams.append('lang_set','auto');
-	location.href = url;
+  localStorage.setItem('lang_set','auto');
+} else {
+  localStorage.setItem('lang','default'); 
 }
 
-if (params.get('lang') == "default" && params.get('lang_set') != "manual") {
+if (localStorage.getItem('lang') == "default" && localStorage.getItem('lang_set') != "manual") {
   if(lang2 == "en") {
-    url.searchParams.set('lang','en');
-    location.href = url;
+    localStorage.setItem('lang','en');
   }
 }
 
-if (params.get('lang') == "en" && params.get('lang_set') != "manual") {
+if (localStorage.getItem('lang') == "en" && localStorage.getItem('lang_set') != "manual") {
   if(lang2 == "ja") {
-    url.searchParams.set('lang','default');
-    location.href = url;
+    localStorage.setItem('lang','default');
   }
 }
 
-if (params.get('lang') == "en") {
+if (localStorage.getItem('lang') == "en") {
   var list_text = [];
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://h4011.github.io/Kindai_e-Sports/lang/en.txt', true);
