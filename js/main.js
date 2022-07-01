@@ -7,7 +7,6 @@ for (var i of url_list) {
   if(contact.length != 0) {
     for (const j of contact) {
       j.href=i[1];
-      //i.href="mailto:ssb.kindai@gmail.com?subject=お問い合わせ";
     }
   }
 }
@@ -91,7 +90,20 @@ if(ua.indexOf("windows nt") !== -1) {
 } else if(ua.indexOf("mac os x") !== -1) {
   device = "Mac";
 } else {
-  device = undefined;
+  if(document.referrer.indexOf("h4011.github.io") !== -1){
+    if(localStorage.getItem('device') == null){
+      const result = confirm("デバイスを判別できませんでした。\nPC版のサイトを表示しますか？");
+      device = "Smartphone";
+      if(result == true) device = "PC";
+    } else {
+      device = localStorage.getItem('device');
+    }
+  } else {
+    const result = confirm("デバイスを判別できませんでした。\nPC版のサイトを表示しますか？");
+    device = "Smartphone";
+    if(result == true) device = "PC";
+    localStorage.setItem('device',device);
+  }
 }
 console.log(device);
 var paper = document.getElementById('paper');
@@ -129,7 +141,7 @@ function titleimg() {
       }, 100);
     }
   } else if((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/paper.html') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'paper.html'){
-    if(device == "iPhone" || device == "Android" || device == "iPad") {
+    if(device == "iPhone" || device == "Android" || device == "iPad" || device == "Smartphone") {
       paper.style.width = String(window.innerWidth*0.6) + 'px';
       paper.style.height = 'auto';
     } else {
@@ -180,7 +192,7 @@ function resizeWindow(){
 function resizeWindow(){
   var nav_h = document.getElementById('nav-extended-height').clientHeight;
   var foo_h = document.getElementById('page-footer-height').clientHeight;
-  if(device == "iPhone" || device == "iPad" || device == "Android") {
+  if(device == "iPhone" || device == "iPad" || device == "Android" || device == "Smartphone") {
     document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
     document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h) + 'px');
     if(window.innerHeight >= window.innerWidth) {
@@ -206,7 +218,7 @@ function resizeWindow(){
       }
     }
     titleimg();
-  } else if(device == "Windows" || device == "Mac") {
+  } else if(device == "Windows" || device == "Mac" || device == "PC") {
     document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
     document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h) + 'px');
     if(window.innerHeight >= window.innerWidth) {
