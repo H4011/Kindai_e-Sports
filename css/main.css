@@ -50,6 +50,41 @@
         color: var(--main-text) !important;
     }
 }
+.obi {
+    margin-top:10px;
+    overflow:hidden;
+    position: relative;
+    height: 75px;
+}
+
+.obi .obi2 {
+    margin:0;
+    font-size:1.5em;         /*文字サイズ*/
+    animation: flowing 10s linear infinite;    /*アニメーション*/
+    /*transform:translateX(100%);                最初の位置*/
+    color:#fff;              /*文字の色*/
+    position: absolute;
+    top: 0px;
+    right: 100%;
+}
+/*
+div.obi2 {
+    position: relative;
+    height: 75px;
+}
+div.obi2 p {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+*/
+
+@keyframes flowing {
+    100% {
+        /*transform:translateX(-100%);    終了の位置*/
+        right: -100%;
+    }
+}
 input {
     color: var(--main-text);
 }
@@ -290,6 +325,10 @@ footer {
         width: 40%;
         height: 40%;
     }
+    img.game-img2 {
+        width: 40%;
+        height: 40%;
+    }
     .btn-position {
         position:absolute !important;
         bottom: 0;
@@ -405,6 +444,10 @@ footer {
         font-size: 15px;
     }
     img.game-img {
+        width: 60%;
+        height: 60%;
+    }
+    img.game-img2 {
         width: 60%;
         height: 60%;
     }

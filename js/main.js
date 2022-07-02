@@ -119,8 +119,8 @@ try {
 } catch (error) {
   ;
 }
+var url2 = window.location.href;
 function titleimg() {
-  var url2 = window.location.href;
   if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
     var lt = document.getElementById('left-title').clientHeight;
     var rt = document.getElementById('right-title').clientHeight;
@@ -249,6 +249,35 @@ setTimeout(() => {
 setInterval(() => {
   titleimg();
 }, 500);
+/*
+if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
+  var dt0 = new Date(new Date().getFullYear()+"/"+(new Date().getMonth()+1)+"/"+new Date().getDate());
+  var dt1 = new Date('2022/07/03');
+  var dt2 = new Date('2022/08/05');
+  var diffTime = dt1.getTime() - dt0.getTime();
+  var diffDay = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  var diffTime2 = dt2.getTime() - dt0.getTime();
+  var diffDay2 = Math.ceil(diffTime2 / (1000 * 60 * 60 * 24));
+  console.log(diffDay);
+  if(dt0 < dt1){
+    if(diffDay >= 3 && diffDay != 1){
+      document.querySelector("div.obi").classList.remove("not-display");
+      document.querySelector("div.obi p b").textContent = "申込開始まで後"+diffDay+"日！";
+    } else if(diffDay == 1){
+      document.querySelector("div.obi").classList.remove("not-display");
+      document.querySelector("div.obi p b").textContent = "明日、申込開始です！";
+    }
+  } else if(dt0 == dt1) {
+
+  } else if(dt1 < dt0 && dt0 < dt2) {
+
+  } else if(dt0 == dt2) {
+
+  } else if(dt0 > dt2) {
+
+  }
+}
+*/
 
 $(window).scroll(function (){
   $(".js-markerScrollAnimation").each(function(){
