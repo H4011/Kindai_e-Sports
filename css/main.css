@@ -53,19 +53,14 @@
 .obi {
     margin-top:10px;
     overflow:hidden;
-    position: relative;
-    height: 75px;
 }
 
 .obi .obi2 {
     margin:0;
     font-size:1.5em;         /*文字サイズ*/
     animation: flowing 10s linear infinite;    /*アニメーション*/
-    /*transform:translateX(100%);                最初の位置*/
+    transform:translateX(100%);                /*最初の位置*/
     color:#fff;              /*文字の色*/
-    position: absolute;
-    top: 0px;
-    right: 100%;
 }
 /*
 div.obi2 {
@@ -81,8 +76,7 @@ div.obi2 p {
 
 @keyframes flowing {
     100% {
-        /*transform:translateX(-100%);    終了の位置*/
-        right: -100%;
+        transform:translateX(-100%);    /*終了の位置*/
     }
 }
 input {
