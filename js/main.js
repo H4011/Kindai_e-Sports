@@ -299,7 +299,7 @@ if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') 
   }
 }
 var dt0 = new Date(new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }));
-var dt4 = new Date('2022/07/03 0:00:00');
+var dt4 = new Date('2022/07/03 12:00:00');
 var diffTime0 = dt4.getTime() - dt0.getTime();
 var ii = 0;
 function PageOpen(){
@@ -317,13 +317,13 @@ function PageOpen(){
     if (location.protocol == 'https:') {
       window.location.href = "https://h4011.github.io/Kindai_e-Sports/"
     } else if(location.protocol == 'file:'){
-      window.location.href = window.location.href.replace("paper","index").replace("contact","index")
+      window.location.href = window.location.href.replace("paper","index").replace("contact","index");
     }
   }
     ii = 1
   }
   if(ii == 1 && diffTime3 >= 0){
-    document.querySelector("p.count3").textContent = "残り"+diffDay3+"日"+('0'+diffh).slice(-2)+"時間"+('0'+diffm).slice(-2)+"分"+('0'+diffs).slice(-2)+"秒"
+    document.querySelector("p.count3").textContent = "残り"+diffDay3+"日"+('0'+diffh).slice(-2)+"時間"+('0'+diffm).slice(-2)+"分"+('0'+diffs).slice(-2)+"秒";
   }
   if(ii == 1 && diffTime3 < 0){
     location.reload();
