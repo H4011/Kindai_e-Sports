@@ -299,7 +299,7 @@ if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') 
   }
 }
 var dt0 = new Date(new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }));
-var dt4 = new Date('2022/07/03 15:00:00');
+var dt4 = new Date('2022/07/03 12:00:00');
 var diffTime0 = dt4.getTime() - dt0.getTime();
 var ii = 0;
 function PageOpen(){
