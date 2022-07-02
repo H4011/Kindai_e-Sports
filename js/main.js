@@ -331,9 +331,13 @@ function PageOpen(){
 }
 PageOpen();
 if(ii == 0) {
-  document.querySelector("div.main").classList.remove("not-display")
+  try{
+  document.querySelector("div.main").classList.remove("not-display");
+  } catch (error) {;}
 } else {
-  document.querySelector("div.count").classList.remove("not-display")
+  try{
+  document.querySelector("div.count").classList.remove("not-display");
+  } catch (error) {;}
 }
 setInterval(() => {
   if(ii == 1){
