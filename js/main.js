@@ -1,7 +1,12 @@
 var ua = window.navigator.userAgent.toLowerCase();
 
 // ,["",""]
-var url_list = [["contact_button","contact.html"],["home_button","index.html"],["form_button","https://forms.gle/xwrbFKLGt4ny6k4N8"],["paper_button","paper.html"]];
+var url_list;
+if (location.protocol == 'https:') {
+  url_list = [["contact_button","contact.html"],["home_button","./"],["form_button","https://forms.gle/xwrbFKLGt4ny6k4N8"],["paper_button","paper.html"]];
+} else if(location.protocol == 'file:'){
+  url_list = [["contact_button","contact.html"],["home_button","index.html"],["form_button","https://forms.gle/xwrbFKLGt4ny6k4N8"],["paper_button","paper.html"]];
+}
 for (var i of url_list) {
   var contact = document.querySelectorAll("a[data-translation_id='" + i[0] + "']");
   if(contact.length != 0) {
@@ -121,6 +126,7 @@ try {
 }
 var url2 = window.location.href;
 function titleimg() {
+  try{
   if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
     var lt = document.getElementById('left-title').clientHeight;
     var rt = document.getElementById('right-title').clientHeight;
@@ -149,6 +155,7 @@ function titleimg() {
       paper.style.width = 'auto';
     }
   }
+  } catch (error) {;}
 }
 console.log(document.body.clientWidth);
 console.log(window.innerHeight);
@@ -190,11 +197,15 @@ function resizeWindow(){
 }
 */
 function resizeWindow(){
+  try {
   var nav_h = document.getElementById('nav-extended-height').clientHeight;
   var foo_h = document.getElementById('page-footer-height').clientHeight;
+  } catch (error) {;}
   if(device == "iPhone" || device == "iPad" || device == "Android" || device == "Smartphone") {
+    try {
     document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
     document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h) + 'px');
+    } catch (error) {;}
     if(window.innerHeight >= window.innerWidth) {
       if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size').replace('px','').replace('auto','0')) <= window.innerHeight) {
         document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
@@ -217,10 +228,12 @@ function resizeWindow(){
         console.log("Cancel Width")
       }
     }
-    titleimg();
+    //titleimg();
   } else if(device == "Windows" || device == "Mac" || device == "PC") {
+    try {
     document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
     document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h) + 'px');
+    } catch (error) {;}
     if(window.innerHeight >= window.innerWidth) {
         document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
         document.documentElement.style.setProperty('--back-size2','auto');
@@ -237,7 +250,7 @@ function resizeWindow(){
           console.log("Width")
         }
     }
-    titleimg();
+    //titleimg();
   }
 }
 
@@ -249,9 +262,9 @@ setTimeout(() => {
 setInterval(() => {
   titleimg();
 }, 500);
-
+var dt = new Date(new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }));
+var dt0 = new Date(dt.getFullYear()+"/"+(dt.getMonth()+1)+"/"+dt.getDate());
 if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
-  var dt0 = new Date(new Date().getFullYear()+"/"+(new Date().getMonth()+1)+"/"+new Date().getDate());
   var dt1 = new Date('2022/07/06');
   var dt2 = new Date('2022/08/05');
   var diffTime = dt1.getTime() - dt0.getTime();
@@ -280,7 +293,48 @@ if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') 
     document.querySelector("p.day").textContent = "申込期間：受付は終了しました";
   }
 }
-
+var dt0 = new Date(new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }));
+var dt4 = new Date('2022/07/03 15:00:00');
+var diffTime0 = dt4.getTime() - dt0.getTime();
+var ii = 0;
+function PageOpen(){
+  var dt3 = new Date(new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }));
+  var diffTime3 = dt4.getTime() - dt3.getTime();
+  var diffDay3 = Math.floor(diffTime3 / (1000 * 60 * 60 * 24));
+  var diffh = Math.floor(diffTime3 / (1000 * 60 * 60)) - (diffDay3 * 24);
+  var diffm = Math.floor(diffTime3 / (1000 * 60)) - (diffDay3 * 24 * 60) - (diffh * 60);
+  var diffs = Math.floor(diffTime3 / 1000) - (diffDay3 * 24 * 60 * 60) - (diffh * 60 * 60) - (diffm * 60);
+  console.log(diffDay3+"日"+diffh+"時間"+diffm+"分"+diffs+"秒");
+  if(diffTime3 >= 0 && ii == 0){
+    try{
+    document.querySelector("div.main").remove();
+  } catch (error) {
+    if (location.protocol == 'https:') {
+      window.location.href = "https://h4011.github.io/Kindai_e-Sports/"
+    } else if(location.protocol == 'file:'){
+      window.location.href = window.location.href.replace("paper","index").replace("contact","index")
+    }
+  }
+    ii = 1
+  }
+  if(ii == 1 && diffTime3 >= 0){
+    document.querySelector("p.count3").textContent = "残り"+diffDay3+"日"+('0'+diffh).slice(-2)+"時間"+('0'+diffm).slice(-2)+"分"+('0'+diffs).slice(-2)+"秒"
+  }
+  if(ii == 1 && diffTime3 < 0){
+    location.reload();
+  }
+}
+PageOpen();
+if(ii == 0) {
+  document.querySelector("div.main").classList.remove("not-display")
+} else {
+  document.querySelector("div.count").classList.remove("not-display")
+}
+setInterval(() => {
+  if(ii == 1){
+    PageOpen();
+  }
+}, 1000);
 
 $(window).scroll(function (){
   $(".js-markerScrollAnimation").each(function(){

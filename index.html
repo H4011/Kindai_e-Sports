@@ -222,6 +222,7 @@
   </g>
 </g>
 </svg>
+<div class="main not-display">
   <!-- Element Showed -->
   <div class="div-menu">
   <a id="menu" class="waves-effect waves-light btn btn-floating btn-position" onclick="$('.tap-target').tapTarget('open')"><i class="material-icons">menu</i></a>
@@ -465,6 +466,17 @@
       </div>
     </div>
   </footer>
+</div>
+<div class="not-display count">
+  <div class="count2 center-align">
+    <div class="countbg z-depth-2">
+    <p class="brand-logo blue-grey-text text-darken-2 li1 not-select">KINDAI University SSB Tournament</p>
+    <p class="brand-logo blue-grey-text text-darken-2 li2 not-select">KDIX SSB Tournament</p>
+    <p class="not-select">サイト公開まで</p>
+    <p class="count3 not-select">残り0日0時間0分0秒</p>
+    </div>
+  </div>
+</div>
   <script>
   $(document).ready(function(){
     $('.tabs').tabs();
@@ -532,6 +544,7 @@
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
   </script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
