@@ -317,7 +317,7 @@ function PageOpen(){
     if (location.protocol == 'https:') {
       window.location.href = "https://h4011.github.io/Kindai_e-Sports/"
     } else if(location.protocol == 'file:'){
-      window.location.href = window.location.href.replace("paper","index").replace("contact","index");
+      window.location.href = window.location.href.replace("paper","index").replace("contact","index").replace("404","index");;
     }
   }
     ii = 1
