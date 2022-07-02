@@ -1,5 +1,9 @@
 var ua = window.navigator.userAgent.toLowerCase();
 
+
+if(window.location.href == "https://h4011.github.io/Kindai_e-Sports/index.html"){
+  window.location.href = "https://h4011.github.io/Kindai_e-Sports/"
+}
 // ,["",""]
 var url_list;
 if (location.protocol == 'https:') {
@@ -262,6 +266,7 @@ setTimeout(() => {
 setInterval(() => {
   titleimg();
 }, 500);
+
 var dt = new Date(new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }));
 var dt0 = new Date(dt.getFullYear()+"/"+(dt.getMonth()+1)+"/"+dt.getDate());
 if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
