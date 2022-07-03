@@ -124,7 +124,7 @@ try {
     paper.style.height = String(window.innerHeight*0.8) + 'px';
     paper.style.width = 'auto';
   }
-  paper.setAttribute("src","./img/SSBflyer.png");
+  paper.setAttribute("src","./img/SSB_flyer.png");
 } catch (error) {
   ;
 }
