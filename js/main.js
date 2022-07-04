@@ -29,7 +29,9 @@ if (localStorage.getItem('lang') == null) {
   }
   localStorage.setItem('lang_set','auto');
 } else {
-  localStorage.setItem('lang','default'); 
+  if(localStorage.getItem('lang_set') != "manual"){
+    localStorage.setItem('lang','default'); 
+  }
 }
 
 if (localStorage.getItem('lang') == "default" && localStorage.getItem('lang_set') != "manual") {
@@ -258,7 +260,11 @@ function obi(){
         if(iii == 0) {
           iii = 1;
         }
-        document.querySelector("div.obi p b").textContent = "申込開始まで後"+diffDay1+"日"+('0'+diffh1).slice(-2)+"時間"+('0'+diffm1).slice(-2)+"分"+('0'+diffs1).slice(-2)+"秒";
+        if(localStorage.getItem('lang') == "en"){
+          document.querySelector("div.obi p b").textContent = diffDay1+" day and "+('0'+diffh1).slice(-2)+" hours "+('0'+diffm1).slice(-2)+" minutes "+('0'+diffs1).slice(-2)+" seconds until application starts";
+        } else {
+          document.querySelector("div.obi p b").textContent = "申込開始まで後"+diffDay1+"日"+('0'+diffh1).slice(-2)+"時間"+('0'+diffm1).slice(-2)+"分"+('0'+diffs1).slice(-2)+"秒";
+        }
       } else if(diffDay1 == 0){
         if(iii == 0) {
           iii = 1;
@@ -266,7 +272,11 @@ function obi(){
         if(diffm1 <= 10 || diffh1 == 0){
           document.querySelector("div.obi p b").textContent = "まもなく申込開始です！申込開始まで後"+('0'+diffm1).slice(-2)+"分"+('0'+diffs1).slice(-2)+"秒";
         } else {
-          document.querySelector("div.obi p b").textContent = "申込開始まで後"+('0'+diffh1).slice(-2)+"時間"+('0'+diffm1).slice(-2)+"分"+('0'+diffs1).slice(-2)+"秒";
+          if(localStorage.getItem('lang') == "en"){
+            document.querySelector("div.obi p b").textContent = ('0'+diffh1).slice(-2)+" hours "+('0'+diffm1).slice(-2)+" minutes "+('0'+diffs1).slice(-2)+" seconds until application starts";
+          } else {
+            document.querySelector("div.obi p b").textContent = "申込開始まで後"+('0'+diffh1).slice(-2)+"時間"+('0'+diffm1).slice(-2)+"分"+('0'+diffs1).slice(-2)+"秒";
+          }
         }
       }
     } else if(diffDay == 0) {
@@ -321,7 +331,7 @@ function PageOpen(){
   var diffh = Math.floor(diffTime3 / (1000 * 60 * 60)) - (diffDay3 * 24);
   var diffm = Math.floor(diffTime3 / (1000 * 60)) - (diffDay3 * 24 * 60) - (diffh * 60);
   var diffs = Math.floor(diffTime3 / 1000) - (diffDay3 * 24 * 60 * 60) - (diffh * 60 * 60) - (diffm * 60);
-  console.log(diffDay3+"日"+diffh+"時間"+diffm+"分"+diffs+"秒");
+  //console.log(diffDay3+"日"+diffh+"時間"+diffm+"分"+diffs+"秒");
   if(diffTime3 >= 0 && ii == 0){
     try{
     document.querySelector("div.main").remove();
@@ -357,7 +367,7 @@ setInterval(() => {
   } else if(iii != 4) {
     obi();
   }
-}, 1000);
+}, 500);
 
 $(window).scroll(function (){
   $(".js-markerScrollAnimation").each(function(){
