@@ -57,22 +57,11 @@
 
 .obi .obi2 {
     margin:0;
-    font-size:1.5em;         /*文字サイズ*/
-    animation: flowing 10s linear infinite;    /*アニメーション*/
-    transform:translateX(100%);                /*最初の位置*/
-    color:#fff;              /*文字の色*/
+    font-size:1.5em;
+    animation: flowing 10s linear infinite;
+    transform:translateX(100%);
+    color:#fff;
 }
-/*
-div.obi2 {
-    position: relative;
-    height: 75px;
-}
-div.obi2 p {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-*/
 .count {
     height: 100vh;
     width: 100vw;
@@ -85,9 +74,9 @@ div.obi2 p {
     right: 0;
     bottom: 0;
     left: 0;
-    margin: auto; /*上下左右中央に*/
-    width: 100vw; /*widthの指定は必須*/
-    height: 100px; /*heightの指定は必須*/
+    margin: auto;
+    width: 100vw;
+    height: 100px;
     padding-left: 20vw;
     padding-right: 20vw;
 }
@@ -103,7 +92,7 @@ div.obi2 p {
 
 @keyframes flowing {
     100% {
-        transform:translateX(-100%);    /*終了の位置*/
+        transform:translateX(-100%);
     }
 }
 input {
@@ -299,11 +288,6 @@ footer {
         padding-right: 30px;
         padding-top: 0.5%;
     }
-    /*
-    #home-anim {
-        height: 100vw;
-    }
-    */
     div.left-title {
         float: left;
         width: 50%;
@@ -361,11 +345,6 @@ footer {
         right: 20px;
         z-index: 10;
     }
-    /*
-    div.tap-target-wave {
-        left: 375px !important;
-    }
-    */
     div.tap-target {
         background-color: var(--main-color);
     }
@@ -423,28 +402,6 @@ footer {
         padding-left: 15px;
         padding-right: 15px;
     }
-    /*
-    #home-anim {
-        height: 100%;
-    }
-    div.left-title {
-        float: left;
-        width: 50%;
-        height: 100%;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    div.right-title {
-        float: right;
-        width: 50%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: var(--right-top);
-        padding-bottom: var(--right-bottom);
-    }
-        */
     div.title-sub {
         height: 100%;
         display: flex;

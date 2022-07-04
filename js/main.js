@@ -1,6 +1,3 @@
-var ua = window.navigator.userAgent.toLowerCase();
-
-
 if(window.location.href == "https://h4011.github.io/Kindai_e-Sports/index.html"){
   window.location.href = "https://h4011.github.io/Kindai_e-Sports/"
 }
@@ -87,6 +84,7 @@ for (const j of info_id) {
   j.id = "icon" + info_count;
   info_count++;
 }
+var ua = window.navigator.userAgent.toLowerCase();
 var device;
 if(ua.indexOf("windows nt") !== -1) {
   device = "Windows";
@@ -168,38 +166,7 @@ console.log(getComputedStyle(document.documentElement).getPropertyValue('--main-
 titleimg();
 
 var size3 = 0;
-/*
-function resizeWindow(){
-  var nav_h = document.getElementById('nav-extended-height').clientHeight;
-  var foo_h = document.getElementById('page-footer-height').clientHeight;
-  if(size3 < window.innerHeight && (device == "iPhone" || device == "iPad" || device == "Android")) {
-    document.getElementById('home-anim').style.setProperty("width",'auto')
-    document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
-    document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
-    document.documentElement.style.setProperty('--back-size2',String(window.innerWidth) + 'px');
-    document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h) + 'px');
-    console.log(String(window.innerHeight) + 'px');
-    size3 = window.innerHeight;
-    if(document.getElementById('home-anim').clientWidth < window.innerWidth) {
-      document.documentElement.style.setProperty('--back-size','auto');
-      document.getElementById('home-anim').style.setProperty("width",String(window.innerWidth) + 'px')
-    }
-    titleimg();
-  } else if(device == "Windows" || device == "Mac") {
-    document.getElementById('home-anim').style.setProperty("width",'auto')
-    document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
-    document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
-    document.documentElement.style.setProperty('--back-size2',String(window.innerWidth) + 'px');
-    document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h) + 'px');
-    console.log(String(window.innerHeight) + 'px');
-    if(document.getElementById('home-anim').clientWidth < window.innerWidth) {
-      document.documentElement.style.setProperty('--back-size','auto');
-      document.getElementById('home-anim').style.setProperty("width",String(window.innerWidth) + 'px')
-    }
-    titleimg();
-  }
-}
-*/
+
 function resizeWindow(){
   try {
   var nav_h = document.getElementById('nav-extended-height').clientHeight;
@@ -267,37 +234,82 @@ setInterval(() => {
   titleimg();
 }, 500);
 
-var dt = new Date(new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }));
-var dt0 = new Date(dt.getFullYear()+"/"+(dt.getMonth()+1)+"/"+dt.getDate());
-if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
-  var dt1 = new Date('2022/07/06');
-  var dt2 = new Date('2022/08/05');
-  var diffTime = dt1.getTime() - dt0.getTime();
+//var dt0 = new Date(dt.getFullYear()+"/"+(dt.getMonth()+1)+"/"+dt.getDate());
+var iii = 0;
+function obi(){
+  var dt = new Date(new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }));
+  var dt1 = new Date('2022/07/06 00:00:00');
+  var dt2 = new Date('2022/08/06 00:00:00');
+  var diffTime = dt1.getTime() - dt.getTime();
   var diffDay = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  var diffTime2 = dt2.getTime() - dt0.getTime();
+  var diffDay1 = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  var diffh1 = Math.floor(diffTime / (1000 * 60 * 60)) - (diffDay1 * 24);
+  var diffm1 = Math.floor(diffTime / (1000 * 60)) - (diffDay1 * 24 * 60) - (diffh1 * 60);
+  var diffs1 = Math.floor(diffTime / 1000) - (diffDay1 * 24 * 60 * 60) - (diffh1 * 60 * 60) - (diffm1 * 60);
+  var diffTime2 = dt2.getTime() - dt.getTime();
   var diffDay2 = Math.ceil(diffTime2 / (1000 * 60 * 60 * 24));
-  console.log(diffDay);
-  if(dt0 < dt1){
-    if(diffDay <= 3 && diffDay != 1){
-      document.querySelector("div.obi").classList.remove("not-display");
-      document.querySelector("div.obi p b").textContent = "申込開始まで後"+diffDay+"日！";
-    } else if(diffDay == 1){
-      document.querySelector("div.obi").classList.remove("not-display");
-      document.querySelector("div.obi p b").textContent = "明日、申込開始です！";
+  var diffDay12 = Math.floor(diffTime2 / (1000 * 60 * 60 * 24));
+  var diffh12 = Math.floor(diffTime2 / (1000 * 60 * 60)) - (diffDay12 * 24);
+  var diffm12 = Math.floor(diffTime2 / (1000 * 60)) - (diffDay12 * 24 * 60) - (diffh12 * 60);
+  var diffs12 = Math.floor(diffTime2 / 1000) - (diffDay12 * 24 * 60 * 60) - (diffh12 * 60 * 60) - (diffm12 * 60);
+  if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
+    if(dt < dt1){
+      if(diffDay <= 3 && diffDay != 1){
+        if(iii == 0) {
+          iii = 1;
+        }
+        document.querySelector("div.obi p b").textContent = "申込開始まで後"+diffDay1+"日"+('0'+diffh1).slice(-2)+"時間"+('0'+diffm1).slice(-2)+"分"+('0'+diffs1).slice(-2)+"秒";
+      } else if(diffDay1 == 0){
+        if(iii == 0) {
+          iii = 1;
+        }
+        if(diffm1 <= 10 || diffh1 == 0){
+          document.querySelector("div.obi p b").textContent = "まもなく申込開始です！申込開始まで後"+('0'+diffm1).slice(-2)+"分"+('0'+diffs1).slice(-2)+"秒";
+        } else {
+          document.querySelector("div.obi p b").textContent = "申込開始まで後"+('0'+diffh1).slice(-2)+"時間"+('0'+diffm1).slice(-2)+"分"+('0'+diffs1).slice(-2)+"秒";
+        }
+      }
+    } else if(diffDay == 0) {
+      if(iii == 0) {
+        iii = 1;
+      }
+      document.querySelector("div.obi p b").textContent = "申込の受付を開始しました！";
+    } else if(diffDay < 0 && diffDay12 > 0) {
+      if(iii == 0) {
+        iii = 1;
+      }
+      document.querySelector("div.obi p b").textContent = "申込受付中です。受付終了まで"+diffDay12+"日"+('0'+diffh12).slice(-2)+"時間"+('0'+diffm12).slice(-2)+"分"+('0'+diffs12).slice(-2)+"秒";
+    } else if(diffDay12 == 0) {
+      if(iii == 0) {
+        iii = 1;
+      }
+      document.querySelector("div.obi p b").textContent = "本日受付最終日です！終了まで"+('0'+diffh12).slice(-2)+"時間"+('0'+diffm12).slice(-2)+"分"+('0'+diffs12).slice(-2)+"秒";
+    } else if(diffTime2 < 0) {
+      iii = 3;
+      document.querySelector("p.day").textContent = "申込期間：受付は終了しました";
     }
-  } else if(diffDay == 0) {
-    document.querySelector("div.obi").classList.remove("not-display");
-    document.querySelector("div.obi p b").textContent = "申込の受付を開始しました！";
-  } else if(diffDay < 0 && diffDay2 > 0) {
-    document.querySelector("div.obi").classList.remove("not-display");
-    document.querySelector("div.obi p b").textContent = "申込受付中です。受付終了まで"+diffDay2+"日";
-  } else if(diffDay2 == 0) {
-    document.querySelector("div.obi").classList.remove("not-display");
-    document.querySelector("div.obi p b").textContent = "本日受付最終日です！";
-  } else if(diffDay2 < 0) {
-    document.querySelector("p.day").textContent = "申込期間：受付は終了しました";
+    if(iii == 1){
+      document.querySelector("div.obi").classList.remove("not-display");
+      iii = 2;
+    }
+    if(iii == 3){
+      document.querySelector("div.obi").classList.add("not-display");
+      iii = 4;
+    }
+  } else {
+    if(diffTime2 < 0){
+      var contact2 = document.querySelectorAll("a[data-translation_id='form_button']");
+      if(contact2.length != 0) {
+        for (const j of contact2) {
+          j.href="404.html";
+          j.target="";
+        }
+      }
+    }
   }
 }
+obi();
+
 var dt0 = new Date(new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }));
 var dt4 = new Date('2022/07/03 12:00:00');
 var diffTime0 = dt4.getTime() - dt0.getTime();
@@ -342,16 +354,18 @@ if(ii == 0) {
 setInterval(() => {
   if(ii == 1){
     PageOpen();
+  } else if(iii != 4) {
+    obi();
   }
 }, 1000);
 
 $(window).scroll(function (){
   $(".js-markerScrollAnimation").each(function(){
-    var position = $(this).offset().top; //ページの一番上から要素までの距離を取得
-    var scroll = $(window).scrollTop(); //スクロールの位置を取得
-    var windowHeight = $(window).height(); //ウインドウの高さを取得
-    if (scroll > position - windowHeight){ //スクロール位置が要素の位置を過ぎたとき
-      $(this).addClass('is-active'); //クラス「active」を与える
+    var position = $(this).offset().top;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll > position - windowHeight){
+      $(this).addClass('is-active');
     }
   });
 });
@@ -359,7 +373,6 @@ $(window).scroll(function (){
 resizeWindow();
 
 $(function() {
-  // ボタンをクリックしたら発動
   $('a.btn.waves-effect.waves-light.contact').click(function() {
     var first_name = document.getElementById("first_name").value;
     var last_name = document.getElementById("last_name").value;
