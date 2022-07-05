@@ -4,7 +4,7 @@ if(window.location.href == "https://h4011.github.io/Kindai_e-Sports/index.html")
 // ,["",""]
 var url_list;
 if (location.protocol == 'https:') {
-  url_list = [["contact_button","contact.html"],["home_button","./"],["form_button","https://forms.gle/xwrbFKLGt4ny6k4N8"],["paper_button","paper.html"]];
+  url_list = [["contact_button","/Kindai_e-Sports/contact.html"],["home_button","/Kindai_e-Sports/"],["form_button","https://forms.gle/xwrbFKLGt4ny6k4N8"],["paper_button","/Kindai_e-Sports/paper.html"]];
 } else if(location.protocol == 'file:'){
   url_list = [["contact_button","contact.html"],["home_button","index.html"],["form_button","https://forms.gle/xwrbFKLGt4ny6k4N8"],["paper_button","paper.html"]];
 }
