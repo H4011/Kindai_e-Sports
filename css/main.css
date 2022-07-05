@@ -16,6 +16,7 @@
         --color-3: white;
         --color-4: 1px solid rgba(0,0,0,0.12);
         --color-5: rgb(143, 233, 233);
+        --color-6: #455a64;
     }
 }
 
@@ -32,6 +33,7 @@
         --color-3: grey;
         --color-4: 1px solid rgba(255,255,255,0.12);
         --color-5: rgb(103, 201, 201);
+        --color-6: #ffffff;
     }
     .blue-grey-text.text-darken-2.not-select {
         color: white !important;
@@ -114,7 +116,7 @@ ul.sidenav {
     background-color: var(--main-color);
 }
 li.indicator {
-    background-color: #455a64 !important;
+    background-color: var(--color-6) !important;
 }
 div.collapsible-body {
     border: 0px;
@@ -273,6 +275,12 @@ footer {
 }
 /* PC用CSS */
 @media print, screen and (min-width: 992px) {
+    /*.container {
+        width: 77% !important;
+    }*/
+    .device2 {
+        display: none !important;
+    }
     a.brand-logo {
         padding-left: 20px !important;
     }
@@ -389,8 +397,11 @@ footer {
 
 /* スマホ用CSS */
 @media screen and (max-width: 992px) {
+    .device1 {
+        display: none !important;
+    }
     p.title {
-        font-size: 200%;
+        font-size: 135% !important;
         margin-top: 10px;
         margin-bottom: 5px !important;
         padding-left: 10px;
