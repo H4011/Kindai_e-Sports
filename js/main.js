@@ -269,7 +269,7 @@ function obi(){
         if(iii == 0) {
           iii = 1;
         }
-        if(diffm1 <= 10 || diffh1 == 0){
+        if(diffm1 <= 10 && diffh1 == 0){
           document.querySelector("div.obi p b").textContent = "まもなく申込開始です！申込開始まで後"+('0'+diffm1).slice(-2)+"分"+('0'+diffs1).slice(-2)+"秒";
         } else {
           if(localStorage.getItem('lang') == "en"){
