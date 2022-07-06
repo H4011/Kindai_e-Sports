@@ -8,7 +8,8 @@
             "URL":{
                 "value":false,
                 "URL_title":[],
-                "Link":[]
+                "Link":[],
+                "Link_target":[]
             },
             "contents":"ホームページを公開しました。"
         },
@@ -19,7 +20,8 @@
             "URL":{
                 "value":true,
                 "URL_title":["お問い合わせはこちら"],
-                "Link":["/Kindai_e-Sports/contact.html"]
+                "Link":["/Kindai_e-Sports/contact.html"],
+                "Link_target":[false]
             },
             "contents":"大会の参加申し込みを受付開始しました。<br>参加方法はホームの参加資格・参加方法から申込できます。<br>受付終了日は8/5<br>先着30名まで<br>参加お待ちしております。"
         },
@@ -30,7 +32,8 @@
             "URL":{
                 "value":false,
                 "URL_title":[],
-                "Link":[]
+                "Link":[],
+                "Link_target":[]
             },
             "contents":"申込人数が30名に達したため申し込みを終了させていただきます。"
         }

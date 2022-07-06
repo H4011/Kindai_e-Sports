@@ -16,7 +16,8 @@ for (var i of url_list) {
     }
   }
 }
-
+var url2 = window.location.href;
+var dt0 = new Date(new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }));
 console.log(localStorage.getItem('lang'));
 var lang2 = (window.navigator.userLanguage || window.navigator.language || window.navigator.browserLanguage).substr(0,2) == "ja" ? "ja" : "en";
 if (localStorage.getItem('lang') == null) {
@@ -79,6 +80,83 @@ if (localStorage.getItem('lang') == "en") {
   }
   xhr.send(null);
 }
+/*
+var data_info;
+if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
+  $.getJSON("https://h4011.github.io/Kindai_e-Sports/info.json", function(json){
+    data_info = json;
+  });
+  Object.keys(data_info.contents_list).forEach(function(i){
+    if(data_info.contents_list[i].display != false){
+      var newElement = document.createElement("div");
+      newElement.setAttribute("class","QA z-depth-3");
+      var Element_info = document.createElement("div");
+      Element_info.setAttribute("class","info");
+      var Element_info2 = document.createElement("div");
+      Element_info2.setAttribute("class","info2");
+      var Element_row = document.createElement("div"); //
+      Element_row.setAttribute("class","row");
+      var title_div = document.createElement("div"); //
+      title_div.setAttribute("class","col s7 left-align info_div");
+      var date_div = document.createElement("div"); //
+      date_div.setAttribute("class","col s5 right-align info_div");
+      var title_p = document.createElement("p"); //
+      title_p.appendChild(document.createTextNode(data_info.contents_list[i].title));
+      var date_p = document.createElement("p"); //
+      date_p.appendChild(document.createTextNode(data_info.contents_list[i].date));
+      var Element_ul = document.createElement("ul"); //
+      Element_ul.setAttribute("class","collapsible");
+      var li_info = document.createElement("li"); //
+      li_info.setAttribute("class","info");
+      var div_header = document.createElement("div"); //
+      div_header.setAttribute("class","collapsible-header not-select");
+      div_header.setAttribute("onclick","$('#'+this.id).toggleClass('active');");
+      var icon1 = document.createElement("i"); //
+      icon1.setAttribute("class","material-icons icon1");
+      icon1.appendChild(document.createTextNode("expand_more"));
+      var icon2 = document.createElement("i"); //
+      icon2.setAttribute("class","material-icons icon2");
+      icon2.appendChild(document.createTextNode("expand_less"));
+      var div_body = document.createElement("div"); //
+      div_body.setAttribute("class","collapsible-body");
+      var contents_p = document.createElement("p"); //
+      contents_p.appendChild(document.createTextNode(Object.keys(data_info.contents_list[i].contents).replaceAll("\\n","<br>"))); //
+      if(data_info.contents_list[i].URL.value){
+        var div_url = document.createElement("div");//
+        div_url.setAttribute("class","url");
+        data_info.contents_list[i].URL.Link.forEach(function(i){
+          for (let index = 0; index < data_info.contents_list[i].URL.Link.length; index++) {
+            var url_a = document.createElement("a");//
+            url_a.appendChild(document.createTextNode(data_info.contents_list[i].URL.URL_title[index]));
+            url_a.setAttribute("href",data_info.contents_list[i].URL.Link[index]);
+            if(data_info.contents_list[i].URL.Link_target[index]){
+              url_a.setAttribute("target","_blank");
+            }
+            div_url.appendChild(url_a);
+          }
+        });
+        div_body.appendChild(div_url);
+      }
+      div_body.insertBefore(contents_p, div_body.firstChild);
+      div_header.appendChild(icon1);
+      div_header.appendChild(icon2);
+      li_info.appendChild(div_header);
+      li_info.appendChild(div_body);
+      Element_ul.appendChild(li_info);
+      title_div.appendChild(title_p);
+      date_div.appendChild(date_p);
+      Element_row.appendChild(title_div);
+      Element_row.appendChild(date_div);
+      Element_info.appendChild(Element_row);
+      Element_info.appendChild(Element_ul);
+      newElement.appendChild(Element_info);
+      newElement.appendChild(Element_info2);
+      var child = document.getElementById("info_p");
+      child.insertBefore(newElement, child.nextSibling);
+    }
+  });
+}*/
+
 
 var info_id = document.querySelectorAll("div.collapsible-header");
 var info_count = 0;
@@ -128,7 +206,7 @@ try {
 } catch (error) {
   ;
 }
-var url2 = window.location.href;
+
 function titleimg() {
   try{
   if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
@@ -320,7 +398,6 @@ function obi(){
 }
 obi();
 
-var dt0 = new Date(new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }));
 var dt4 = new Date('2022/07/03 12:00:00');
 var diffTime0 = dt4.getTime() - dt0.getTime();
 var ii = 0;
