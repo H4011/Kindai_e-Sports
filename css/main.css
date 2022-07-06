@@ -133,6 +133,7 @@ li.indicator {
 div.collapsible-body {
     border: 0px;
     background-color: var(--color-3);
+    padding-top: 1rem !important;
 }
 div.QA {
     background-color: var(--color-2);

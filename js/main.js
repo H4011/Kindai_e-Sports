@@ -80,12 +80,11 @@ if (localStorage.getItem('lang') == "en") {
   }
   xhr.send(null);
 }
-/*
 if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
   $.getJSON("https://h4011.github.io/Kindai_e-Sports/info.json", function(json){
     let data_info = json;
     Object.keys(data_info.contents_list).forEach(function(i){
-      if(data_info.contents_list[i].display != false){
+      if(data_info.contents_list[i].display != false || localStorage.getItem('test') == "true"){
         var newElement = document.createElement("div");
         newElement.setAttribute("class","QA z-depth-3");
         var Element_info = document.createElement("div");
@@ -118,7 +117,8 @@ if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') 
         var div_body = document.createElement("div"); //
         div_body.setAttribute("class","collapsible-body");
         var contents_p = document.createElement("p"); //
-        contents_p.appendChild(document.createTextNode(data_info.contents_list[i].contents.replaceAll(/\n/g,'<br>').replaceAll("<br>",'<br>'))); //
+        //contents_p.appendChild(document.createTextNode(data_info.contents_list[i].contents)); //
+        contents_p.innerHTML = data_info.contents_list[i].contents.replace(/\n/g, '<br>');
         if(data_info.contents_list[i].URL.value){
           var url_count = data_info.contents_list[i].URL.Link.length;
           var div_url = document.createElement("div");//
@@ -155,14 +155,16 @@ if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') 
         parentDiv.insertBefore(newElement, child.nextSibling);
       }
     });
+    infoid();
   });
-}*/
-
-var info_id = document.querySelectorAll("div.collapsible-header");
-var info_count = 0;
-for (const j of info_id) {
-  j.id = "icon" + info_count;
-  info_count++;
+}
+function infoid(){
+  var info_id = document.querySelectorAll("div.collapsible-header");
+  var info_count = 0;
+  for (const j of info_id) {
+    j.id = "icon" + info_count;
+    info_count++;
+  }
 }
 var ua = window.navigator.userAgent.toLowerCase();
 var device;
