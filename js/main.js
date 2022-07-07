@@ -165,6 +165,9 @@ function infoid(){
     j.id = "icon" + info_count;
     info_count++;
   }
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
 }
 var ua = window.navigator.userAgent.toLowerCase();
 var device;
