@@ -71,7 +71,6 @@ div.right-align.info_div p {
 }
 .obi .obi2 {
     margin:0;
-    font-size:1.5em;
     animation: flowing 10s linear infinite;
     transform:translateX(100%);
     color:#fff;
@@ -294,6 +293,9 @@ footer {
     /*.container {
         width: 77% !important;
     }*/
+    .obi .obi2 {
+        font-size:1.5em;
+    }
     .device2 {
         display: none !important;
     }
@@ -413,6 +415,9 @@ footer {
 
 /* スマホ用CSS */
 @media screen and (max-width: 992px) {
+    .obi .obi2 {
+        font-size:1em;
+    }
     .device1 {
         display: none !important;
     }
