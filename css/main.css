@@ -52,6 +52,9 @@
         color: var(--main-text) !important;
     }
 }
+.g-recaptcha div {
+    display: inline-block;
+}
 .obi {
     margin-top:10px;
     overflow:hidden;
