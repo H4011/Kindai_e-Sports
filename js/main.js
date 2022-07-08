@@ -3,9 +3,21 @@ if(window.location.href == "https://h4011.github.io/Kindai_e-Sports/index.html")
 }
 var bot = false;
 function reCAPTCHA(){
+  var contact_b = document.querySelectorAll("a.btn.waves-effect.waves-light.contact.disabled");
+  if(contact_b.length != 0) {
+    for (const j of contact_b) {
+      j.classList.remove("disabled")
+    }
+  }
   bot = true;
 }
 function NotreCAPTCHA(){
+  var contact_b2 = document.querySelectorAll("a.btn.waves-effect.waves-light.contact");
+  if(contact_b2.length != 0) {
+    for (const j of contact_b2) {
+      j.classList.add("disabled")
+    }
+  }
   bot = false;
 }
 // ,["",""]
@@ -504,6 +516,14 @@ $(function() {
     }
     if(content.replaceAll(" ","").replaceAll("　","").replaceAll("\n","") == "") {
       alert("お問い合わせ内容を入力して下さい。");
+      return;
+    }
+    if(content.replaceAll(" ","").replaceAll("　","").replaceAll("\n","") == "") {
+      alert("お問い合わせ内容を入力して下さい。");
+      return;
+    }
+    if(bot != true) {
+      alert("reCAPTCHA認証をして下さい。");
       return;
     }
     var all = "氏名："+first_name+" "+last_name+"\n学籍番号："+ssb_num+"\n選手名："+ssb_name+"\n\n問い合わせ項目："+checkValue+"\n\n◇お問い合わせ内容\n"+content+"\n\n※このまま送信して下さい";
