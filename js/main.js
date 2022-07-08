@@ -1,6 +1,13 @@
 if(window.location.href == "https://h4011.github.io/Kindai_e-Sports/index.html"){
   window.location.href = "https://h4011.github.io/Kindai_e-Sports/"
 }
+var bot = false;
+function reCAPTCHA(){
+  bot = true;
+}
+function NotreCAPTCHA(){
+  bot = false;
+}
 // ,["",""]
 var url_list;
 if (location.protocol == 'https:') {
