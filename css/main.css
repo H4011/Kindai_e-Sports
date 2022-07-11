@@ -220,6 +220,7 @@ nav#nav-extended-height {
 ul.sidenav {
     background-color: var(--main-color);
     width: auto !important;
+    padding-top: 3vh !important;
 }
 li.indicator {
     background-color: var(--color-6) !important;
