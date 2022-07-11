@@ -64,7 +64,7 @@
 }
 .main-speace2.row.li2 .original-gradient {
     border-radius: 26px 26px 0px 0px;
-    height: 30vh !important;
+    height: 35vh !important;
 }
 /*
 .li1 .twitter-p{
@@ -97,7 +97,7 @@
 }
 .li2 div.twitter {
     background-color: white;
-    height: 30vh;
+    height: 35vh;
 }
 .main-speace2.row.li1 div.twitter {
     border-radius: 0px 26px 26px 0px;
@@ -118,7 +118,7 @@ div.timeline-Widget {
 }
 .li2 div.twitter iframe[id^="twitter-widget-"]{
     width: 100% !important;
-    height: 30vh !important;
+    height: 35vh !important;
     min-height: 0px !important;
 }
 .g-recaptcha div {
