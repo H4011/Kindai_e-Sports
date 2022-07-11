@@ -531,3 +531,45 @@ $(function() {
     location.href = "mailto:ssb.kindai@gmail.com?subject="+encodeURI("お問い合わせ")+"&body="+encodeURI(all);
   });
 });
+var text_value = "";
+var text_value2 = 0;
+$(function() {
+  $('a#page1').click(function() {
+    if (text_value2 == 0) {
+      text_value += "1";
+    }
+    page5();
+  });
+});
+$(function() {
+  $('a#page2').click(function() {
+    if (text_value2 == 0) {
+      text_value += "2";
+    }
+    page5();
+  });
+});
+$(function() {
+  $('a#page3').click(function() {
+    if (text_value2 == 0) {
+      text_value += "3";
+    }
+    page5();
+  });
+});
+$(function() {
+  $('a#page4').click(function() {
+    if (text_value2 == 0) {
+      text_value += "4";
+    }
+    page5();
+  });
+});
+function page5(){
+  if(text_value == "4231423"){
+    document.querySelector("li.page-5").classList.remove("not-display");
+  } else if(text_value.length == 8){
+    document.querySelector("li.page-5").classList.add("not-display");
+    text_value2 = 1;
+  }
+}

@@ -274,7 +274,7 @@ div.collapsible-body p {
     user-select: none;
 }
 .not-display {
-    display: none;
+    display: none !important;
 }
 .collapsible-header {
     border: 0px !important;
