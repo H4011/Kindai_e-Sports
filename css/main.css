@@ -88,6 +88,28 @@
     height: 90%;
 }
 */
+hr {
+    border:0;
+    border-top:4px solid var(--color-1);
+    border-radius: 2px;
+    margin: 15px 20px;
+}
+.sidenav li>p {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 32px;
+}
+.sidenav li>div {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 32px;
+}
 .main-speace2.row.li1 .twitter-timeline {
     border-radius: 0px 26px 26px 0px;
 }
@@ -197,6 +219,7 @@ nav#nav-extended-height {
 }
 ul.sidenav {
     background-color: var(--main-color);
+    width: auto !important;
 }
 li.indicator {
     background-color: var(--color-6) !important;
