@@ -1,3 +1,5 @@
+//@macaron_miku_ 
+
 if(window.location.href == "https://h4011.github.io/Kindai_e-Sports/index.html"){
   window.location.href = "https://h4011.github.io/Kindai_e-Sports/"
 }
