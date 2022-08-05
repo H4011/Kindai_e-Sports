@@ -60,6 +60,18 @@
                 "Link_target":[false]
             },
             "contents":"先ほど、メンテナンスが完了しました。\n\n【内容】\nお問い合わせページにreCAPTCHA認証を追加しました。"
+        },
+        "6":{
+            "title":"申込終了のお知らせ",
+            "date":"2022/08/06",
+            "display":null,
+            "URL":{
+                "value":false,
+                "URL_title":[],
+                "Link":[],
+                "Link_target":[]
+            },
+            "contents":"申込期間を過ぎたため、申込を終了させていただきます。\n沢山の申込、ありがとうございます！"
         }
     }
 }

@@ -102,8 +102,9 @@ if (localStorage.getItem('lang') == "en") {
 if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
   $.getJSON("https://h4011.github.io/Kindai_e-Sports/info.json", function(json){
     let data_info = json;
+    var dtt = new Date(dt0.getFullYear()+"/"+(dt0.getMonth()+1)+"/"+dt0.getDate());
     Object.keys(data_info.contents_list).forEach(function(i){
-      if(data_info.contents_list[i].display != false || localStorage.getItem('test') == "true"){
+      if((new Date(data_info.contents_list[i].date) <= dtt && data_info.contents_list[i].display != false) || localStorage.getItem('test') == "true"){
         var newElement = document.createElement("div");
         newElement.setAttribute("class","QA z-depth-3");
         var Element_info = document.createElement("div");
@@ -220,10 +221,10 @@ console.log(device);
 var paper = document.getElementById('paper');
 try {
   if(device == "iPhone" || device == "Android" || device == "iPad") {
-    paper.style.width = String(window.innerWidth*0.6) + 'px';
+    paper.style.width = String(document.documentElement.clientWidth*0.6) + 'px';
     paper.style.height = 'auto';
   } else {
-    paper.style.height = String(window.innerHeight*0.8) + 'px';
+    paper.style.height = String(document.documentElement.clientHeight*0.8) + 'px';
     paper.style.width = 'auto';
   }
   paper.setAttribute("src","./img/SSB_flyer.png");
@@ -254,10 +255,10 @@ function titleimg() {
     }
   } else if((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/paper.html') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'paper.html'){
     if(device == "iPhone" || device == "Android" || device == "iPad" || device == "Smartphone") {
-      paper.style.width = String(window.innerWidth*0.6) + 'px';
+      paper.style.width = String(document.documentElement.clientWidth*0.6) + 'px';
       paper.style.height = 'auto';
     } else {
-      paper.style.height = String(window.innerHeight*0.8) + 'px';
+      paper.style.height = String(document.documentElement.clientHeight*0.8) + 'px';
       paper.style.width = 'auto';
     }
   }
@@ -278,22 +279,22 @@ function resizeWindow(){
   } catch (error) {;}
   if(device == "iPhone" || device == "iPad" || device == "Android" || device == "Smartphone") {
     try {
-    document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
-    document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h) + 'px');
+    document.documentElement.style.setProperty('--body-size',String(document.documentElement.clientHeight - nav_h -foo_h) + 'px');
+    document.documentElement.style.setProperty('--not-page',String(document.documentElement.clientHeight - nav_h -foo_h) + 'px');
     } catch (error) {;}
-    if(window.innerHeight >= window.innerWidth) {
-      if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size').replace('px','').replace('auto','0')) <= window.innerHeight) {
-        document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
+    if(document.documentElement.clientHeight >= document.documentElement.clientWidth) {
+      if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size').replace('px','').replace('auto','0')) <= document.documentElement.clientHeight) {
+        document.documentElement.style.setProperty('--back-size',String(document.documentElement.clientHeight) + 'px');
         document.documentElement.style.setProperty('--back-size2','auto');
       }
       console.log("Height")
-    } else if(window.innerHeight < window.innerWidth) {
-      if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size2').replace('px','').replace('auto','0')) <= window.innerWidth) {
+    } else if(document.documentElement.clientHeight < document.documentElement.clientWidth) {
+      if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size2').replace('px','').replace('auto','0')) <= document.documentElement.clientWidth) {
         console.log(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size2').replace('px','').replace('auto','0')));
-        document.documentElement.style.setProperty('--back-size2',String(window.innerWidth) + 'px');
+        document.documentElement.style.setProperty('--back-size2',String(document.documentElement.clientWidth) + 'px');
         document.documentElement.style.setProperty('--back-size','auto');
-        if(document.getElementById('home-anim').clientHeight < window.innerHeight) {
-          document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
+        if(document.getElementById('home-anim').clientHeight < document.documentElement.clientHeight) {
+          document.documentElement.style.setProperty('--back-size',String(document.documentElement.clientHeight) + 'px');
           document.documentElement.style.setProperty('--back-size2','auto');
           console.log("Width --> Height")
         } else {
@@ -306,19 +307,19 @@ function resizeWindow(){
     //titleimg();
   } else if(device == "Windows" || device == "Mac" || device == "PC") {
     try {
-    document.documentElement.style.setProperty('--body-size',String(window.innerHeight - nav_h -foo_h) + 'px');
-    document.documentElement.style.setProperty('--not-page',String(window.innerHeight - nav_h -foo_h) + 'px');
+    document.documentElement.style.setProperty('--body-size',String(document.documentElement.clientHeight - nav_h -foo_h) + 'px');
+    document.documentElement.style.setProperty('--not-page',String(document.documentElement.clientHeight - nav_h -foo_h) + 'px');
     } catch (error) {;}
-    if(window.innerHeight >= window.innerWidth) {
-        document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
+    if(document.documentElement.clientHeight >= document.documentElement.clientWidth) {
+        document.documentElement.style.setProperty('--back-size',String(document.documentElement.clientHeight) + 'px');
         document.documentElement.style.setProperty('--back-size2','auto');
       console.log("Height")
     }
-    if(window.innerHeight < window.innerWidth) {
-        document.documentElement.style.setProperty('--back-size2',String(window.innerWidth) + 'px');
+    if(document.documentElement.clientHeight < document.documentElement.clientWidth) {
+        document.documentElement.style.setProperty('--back-size2',String(document.documentElement.clientWidth) + 'px');
         document.documentElement.style.setProperty('--back-size','auto');
-        if(document.getElementById('home-anim').clientHeight < window.innerHeight) {
-          document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
+        if(document.getElementById('home-anim').clientHeight < document.documentElement.clientHeight) {
+          document.documentElement.style.setProperty('--back-size',String(document.documentElement.clientHeight) + 'px');
           document.documentElement.style.setProperty('--back-size2','auto');
           console.log("Width --> Height")
         } else {
@@ -399,6 +400,16 @@ function obi(){
     } else if(diffTime2 < 0) {
       iii = 3;
       document.querySelector("p.day").textContent = "申込期間：受付は終了しました";
+      var contact2 = document.querySelectorAll("a[data-translation_id='form_button']");
+      if(contact2.length != 0) {
+        for (const j of contact2) {
+          j.href="Tournament.html";
+          j.setAttribute("data-translation_id","tournament_button");
+          j.textContent = "トーナメント表"
+          j.target="";
+        }
+      }
+      document.querySelector("a.form_a").textContent = "受付終了";
     }
     if(iii == 1){
       document.querySelector("div.obi").classList.remove("not-display");
@@ -413,7 +424,9 @@ function obi(){
       var contact2 = document.querySelectorAll("a[data-translation_id='form_button']");
       if(contact2.length != 0) {
         for (const j of contact2) {
-          j.href="404.html";
+          j.href="Tournament.html";
+          j.setAttribute("data-translation_id","tournament_button");
+          j.textContent = "トーナメント表"
           j.target="";
         }
       }
@@ -440,7 +453,7 @@ function PageOpen(){
     if (location.protocol == 'https:') {
       window.location.href = "https://h4011.github.io/Kindai_e-Sports/"
     } else if(location.protocol == 'file:'){
-      window.location.href = window.location.href.replace("paper","index").replace("contact","index").replace("404","index");;
+      window.location.href = window.location.href.replace("paper","index").replace("contact","index").replace("404","index");
     }
   }
     ii = 1

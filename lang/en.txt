@@ -1,6 +1,7 @@
 form_button:Participation Form
 contact_button:Contact Us
 other_button:Other
+tournament_button:Tournament
 home_button:Home
 home_tab:Home
 rule_tab:Rule
