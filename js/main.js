@@ -284,7 +284,7 @@ function resizeWindow(){
     document.documentElement.style.setProperty('--not-page',String(document.documentElement.clientHeight - nav_h -foo_h) + 'px');
     } catch (error) {;}
     if(document.documentElement.clientHeight >= document.documentElement.clientWidth) {
-      if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size').replace('px','').replace('auto','0')) <= document.documentElement.clientHeight) {
+      if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size').replace('px','').replace('auto','0')) <= document.documentElement.clientHeight && document.documentElement.clientHeight >= window.innerHeight) {
         document.documentElement.style.setProperty('--back-size',String(document.documentElement.clientHeight) + 'px');
         document.documentElement.style.setProperty('--back-size2','auto');
       } else if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size').replace('px','').replace('auto','0')) <= window.innerHeight){
