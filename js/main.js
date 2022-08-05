@@ -104,9 +104,8 @@ if (localStorage.getItem('lang') == "en") {
 if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') || url2.match(".+/(.+?)([\?#;].*)?$")[1] == 'index.html') {
   $.getJSON("https://h4011.github.io/Kindai_e-Sports/info.json", function(json){
     let data_info = json;
-    var dtt = new Date(dt0.getFullYear()+"/"+(dt0.getMonth()+1)+"/"+dt0.getDate());
     Object.keys(data_info.contents_list).forEach(function(i){
-      if((new Date(data_info.contents_list[i].date) <= dtt && data_info.contents_list[i].display != false) || localStorage.getItem('test') == "true"){
+      if((new Date(data_info.contents_list[i].date) <= dt0 && data_info.contents_list[i].display != false) || localStorage.getItem('test') == "true"){
         var newElement = document.createElement("div");
         newElement.setAttribute("class","QA z-depth-3");
         var Element_info = document.createElement("div");
@@ -122,7 +121,7 @@ if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') 
         var title_p = document.createElement("p"); //
         title_p.appendChild(document.createTextNode(data_info.contents_list[i].title));
         var date_p = document.createElement("p"); //
-        date_p.appendChild(document.createTextNode(data_info.contents_list[i].date));
+        date_p.appendChild(document.createTextNode(data_info.contents_list[i].date.split(" ")[0]));
         var Element_ul = document.createElement("ul"); //
         Element_ul.setAttribute("class","collapsible");
         var li_info = document.createElement("li"); //
