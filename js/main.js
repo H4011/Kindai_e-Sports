@@ -288,7 +288,7 @@ function resizeWindow(){
         document.documentElement.style.setProperty('--back-size',String(document.documentElement.clientHeight) + 'px');
         document.documentElement.style.setProperty('--back-size2','auto');
       } else if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size').replace('px','').replace('auto','0')) <= window.innerHeight){
-        document.documentElement.style.setProperty('--back-size',String(document.documentElement.clientHeight) + 'px');
+        document.documentElement.style.setProperty('--back-size',String(window.innerHeight) + 'px');
         document.documentElement.style.setProperty('--back-size2','auto');
       }
       console.log("Height");
