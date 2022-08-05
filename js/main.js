@@ -287,8 +287,11 @@ function resizeWindow(){
       if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size').replace('px','').replace('auto','0')) <= document.documentElement.clientHeight) {
         document.documentElement.style.setProperty('--back-size',String(document.documentElement.clientHeight) + 'px');
         document.documentElement.style.setProperty('--back-size2','auto');
+      } else if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size').replace('px','').replace('auto','0')) <= window.innerHeight){
+        document.documentElement.style.setProperty('--back-size',String(document.documentElement.clientHeight) + 'px');
+        document.documentElement.style.setProperty('--back-size2','auto');
       }
-      console.log("Height")
+      console.log("Height");
     } else if(document.documentElement.clientHeight < document.documentElement.clientWidth) {
       if(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size2').replace('px','').replace('auto','0')) <= document.documentElement.clientWidth) {
         console.log(Number(getComputedStyle(document.documentElement).getPropertyValue('--back-size2').replace('px','').replace('auto','0')));
