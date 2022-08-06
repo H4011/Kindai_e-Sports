@@ -74,16 +74,16 @@
             "contents":"申込期間を過ぎたため、申込を終了させていただきます。\n沢山の申込、ありがとうございます！"
         },
         "7":{
-            "title":"トーナメント表公開",
+            "title":"トーナメント表&配信ページ公開",
             "date":"2022/08/06 13:00",
             "display":null,
             "URL":{
                 "value":true,
-                "URL_title":["トーナメント表"],
-                "Link":["/Kindai_e-Sports/Tournament.html"],
+                "URL_title":["トーナメント表","配信ページ"],
+                "Link":["/Kindai_e-Sports/Tournament.html","/Kindai_e-Sports/LIVE.html"],
                 "Link_target":[false]
             },
-            "contents":"トーナメント表を公開しました。"
+            "contents":"トーナメント表と配信ページを公開しました。"
         }
     }
 }
