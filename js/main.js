@@ -153,6 +153,10 @@ if ((location.protocol == 'https:' && location.pathname == '/Kindai_e-Sports/') 
                 url_a.setAttribute("target","_blank");
               }
               div_url.appendChild(url_a);
+              if(url_count-1 != index){
+                var url_br = document.createElement("br");
+                div_url.appendChild(url_br);
+              }
             }
           //});
           div_body.appendChild(div_url);
