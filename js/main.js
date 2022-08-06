@@ -411,9 +411,9 @@ function obi(){
       var contact2 = document.querySelectorAll("a[data-translation_id='form_button']");
       if(contact2.length != 0) {
         for (const j of contact2) {
-          j.href="Tournament.html";
+          j.href="LIVE.html";
           j.setAttribute("data-translation_id","tournament_button");
-          j.textContent = "トーナメント表"
+          j.textContent = "配信＆トーナメント表"
           j.target="";
         }
       }
@@ -434,9 +434,9 @@ function obi(){
       var contact2 = document.querySelectorAll("a[data-translation_id='form_button']");
       if(contact2.length != 0) {
         for (const j of contact2) {
-          j.href="Tournament.html";
+          j.href="LIVE.html";
           j.setAttribute("data-translation_id","tournament_button");
-          j.textContent = "トーナメント表"
+          j.textContent = "配信＆トーナメント表"
           j.target="";
         }
       }

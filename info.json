@@ -79,8 +79,8 @@
             "display":null,
             "URL":{
                 "value":true,
-                "URL_title":["トーナメント表","配信ページ"],
-                "Link":["/Kindai_e-Sports/Tournament.html","/Kindai_e-Sports/LIVE.html"],
+                "URL_title":["配信 & トーナメント表ページ"],
+                "Link":["/Kindai_e-Sports/LIVE.html"],
                 "Link_target":[false]
             },
             "contents":"トーナメント表と配信ページを公開しました。"
