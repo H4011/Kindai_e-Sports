@@ -414,6 +414,8 @@ function obi(){
         }
       }
       document.querySelector("a.form_a").textContent = "受付終了";
+      document.querySelector("a.form_a").href="404.html";
+      document.querySelector("a.form_a").setAttribute("data-translation_id","");
     }
     if(iii == 1){
       document.querySelector("div.obi").classList.remove("not-display");
